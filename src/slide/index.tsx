@@ -209,7 +209,7 @@ function SlideDisplay({
                   <div
                     key={index}
                     data-line-index={index}
-                    className={`text-4xl text-left transition-all duration-500 ${
+                    className={`text-4xl text-left leading-tight transition-all duration-500 ${
                       isVisible
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 translate-y-4"
@@ -252,7 +252,7 @@ function SlideDisplay({
                   <p
                     key={index}
                     data-line-index={index}
-                    className={`text-4xl text-left transition-all duration-500 ${
+                    className={`text-4xl text-left leading-tight transition-all duration-500 ${
                       isVisible
                         ? "opacity-100 translate-y-0"
                         : "opacity-0 translate-y-4"
@@ -286,7 +286,7 @@ function SlideDisplay({
           ref={containerRef}
           className="h-[800px] overflow-y-auto scrollbar-hide mb-8 relative"
         >
-          <div className="w-full relative">{renderElement()}</div>
+          <div className="w-full relative leading-tight">{renderElement()}</div>
         </div>
 
         {/* Navigation hint */}
@@ -436,7 +436,7 @@ export default function MarkdownToSlide() {
           {/* Input Section */}
           <div className="bg-zinc-800 rounded-4xl p-8">
             <div className="pb-8">
-              <h2 className="text-xl font-semibold text-zinc-100">Tạo Slide</h2>
+              <h2 className="text-xl font-semibold text-zinc-100">Tạo Slide123</h2>
               <p className="text-sm text-zinc-300 mt-1">
                 Nhập tiêu đề và nội dung markdown cho slide
               </p>
