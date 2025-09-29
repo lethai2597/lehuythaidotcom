@@ -11,13 +11,13 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "LeHuyThai.com - Next.js & Tailwind CSS Demo",
-  description: "Trang web demo được xây dựng với Next.js 15 và Tailwind CSS 4",
+  title: "lehuythai.com - Lê Huy Thái",
+  description: "lehuythai.com - Lê Huy Thái",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "LeHuyThai.com",
+    title: "lehuythai.com",
   },
   icons: {
     icon: [

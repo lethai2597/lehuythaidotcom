@@ -453,7 +453,7 @@ export default function MarkdownToSlide() {
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="Nhập tiêu đề slide..."
-                  className="w-full p-4 rounded-2xl font-medium text-lg bg-zinc-900 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full p-4 rounded-2xl bg-zinc-900 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
 
@@ -465,9 +465,10 @@ export default function MarkdownToSlide() {
                 <textarea
                   value={markdown}
                   onChange={(e) => setMarkdown(e.target.value)}
-                  placeholder={`# Tiêu đề 1
-## Tiêu đề 2  
-### Tiêu đề 3
+                  placeholder={`## Tiêu đề lớn  
+### Tiêu đề nhỏ
+
+Đoạn văn
 
 - Mục 1
 - Mục 2
