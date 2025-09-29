@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
+import PWAInstaller from "@/components/PWAInstaller";
 
 const beVietnamPro = Be_Vietnam_Pro({
   variable: "--font-be-vietnam-pro",
@@ -12,6 +13,29 @@ const beVietnamPro = Be_Vietnam_Pro({
 export const metadata: Metadata = {
   title: "LeHuyThai.com - Next.js & Tailwind CSS Demo",
   description: "Trang web demo được xây dựng với Next.js 15 và Tailwind CSS 4",
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "LeHuyThai.com",
+  },
+  icons: {
+    icon: [
+      { url: "/icons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  themeColor: "#18181b",
 };
 
 export default function RootLayout({
@@ -25,6 +49,7 @@ export default function RootLayout({
         className={`${beVietnamPro.variable} antialiased bg-zinc-900 text-zinc-200 min-h-screen`}
       >
         {children}
+        <PWAInstaller />
       </body>
     </html>
   );
