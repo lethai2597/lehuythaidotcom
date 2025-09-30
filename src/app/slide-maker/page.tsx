@@ -1,7 +1,8 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { Play, ChevronRight } from "lucide-react";
+import { Play, ChevronRight, Home } from "lucide-react";
+import Link from "next/link";
 
 interface SlideElement {
   type: "h1" | "h2" | "h3" | "list" | "image" | "content";
@@ -419,6 +420,15 @@ export default function MarkdownToSlide() {
 
   return (
     <div className="">
+      {/* Back to home button */}
+      <Link 
+        href="/"
+        className="absolute top-6 left-6 z-50 p-3 rounded-full bg-zinc-800/50 hover:bg-zinc-700/50 text-zinc-300 hover:text-white transition-all duration-200 backdrop-blur-sm"
+        title="Về trang chủ"
+      >
+        <Home className="w-5 h-5" />
+      </Link>
+
       <div className="container mx-auto px-4 py-12">
         {/* Header */}
         <div className="text-center mb-12">

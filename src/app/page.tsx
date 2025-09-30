@@ -1,14 +1,19 @@
 import { Presentation } from "lucide-react";
 import Link from "next/link";
+import DownloadApp from "@/components/DownloadApp";
 
 export default function Home() {
+
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-white mb-4">Công cụ vui</h1>
-        <p className="text-zinc-300 text-lg max-w-2xl mx-auto">
+        <p className="text-zinc-300 text-lg max-w-2xl mx-auto mb-6">
           Tổng hợp công cụ có ích cho đời
         </p>
+
+        {/* Download App Button */}
+        <DownloadApp />
       </div>
 
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
