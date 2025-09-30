@@ -1,4 +1,4 @@
-# Chào mừng đến với Slide Maker
+Chào mừng đến với Slide Maker, giới thiệu công cụ
 
 ## Đây là tiêu đề lớn
 
@@ -36,6 +36,7 @@ Sử dụng markdown để định dạng nội dung:
 - ## cho tiêu đề lớn  
 - ### cho tiêu đề nhỏ
 - - cho danh sách
+- ![](đường-dẫn-ảnh) cho ảnh
 
 ### Bước 3: Xem slide
 
