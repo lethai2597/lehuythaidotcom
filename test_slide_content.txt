@@ -1,0 +1,53 @@
+# Chào mừng đến với Slide Maker
+
+## Đây là tiêu đề lớn
+
+Đây là một đoạn văn cơ bản để test tính năng hiển thị của slide.
+
+### Tiêu đề nhỏ hơn
+
+- Ý thứ nhất trong danh sách
+- Ý tiếp theo để test
+- Ý cuối cùng hoàn thành
+
+## Tính năng của Slide Maker
+
+### Dễ sử dụng
+
+Chỉ cần nhập nội dung và nhấn Enter để xem slide.
+
+### Linh hoạt
+
+Hỗ trợ nhiều loại nội dung khác nhau như tiêu đề, đoạn văn, danh sách.
+
+### Đẹp mắt
+
+Giao diện hiện đại với hiệu ứng mượt mà.
+
+## Hướng dẫn sử dụng
+
+### Bước 1: Nhập tiêu đề
+
+Gõ tiêu đề slide vào ô đầu tiên.
+
+### Bước 2: Nhập nội dung
+
+Sử dụng markdown để định dạng nội dung:
+- ## cho tiêu đề lớn  
+- ### cho tiêu đề nhỏ
+- - cho danh sách
+
+### Bước 3: Xem slide
+
+Nhấn "Bắt đầu Slide" để xem kết quả.
+
+## Lợi ích
+
+- Tạo slide nhanh chóng
+- Không cần cài đặt phức tạp
+- Giao diện thân thiện
+- Hoàn toàn miễn phí
+
+## Cảm ơn bạn đã sử dụng!
+
+Chúc bạn tạo được những slide tuyệt vời!

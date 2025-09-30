@@ -1,4 +1,4 @@
-const CACHE_NAME = 'lehuythai-v1';
+const CACHE_NAME = 'congcuvui-v1';
 const urlsToCache = [
   '/',
   '/manifest.json',

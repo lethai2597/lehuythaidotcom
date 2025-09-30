@@ -11,13 +11,13 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "lehuythai.com - Lê Huy Thái",
-  description: "lehuythai.com - Lê Huy Thái",
+  title: "Công cụ vui",
+  description: "Công cụ vui",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "lehuythai.com",
+    title: "Công cụ vui",
   },
   icons: {
     icon: [

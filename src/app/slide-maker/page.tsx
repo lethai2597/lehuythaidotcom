@@ -292,8 +292,6 @@ function SlideDisplay({
         {/* Navigation hint */}
         <div className="flex items-center justify-end space-x-3 text-zinc-300 text-sm">
           <span className="flex items-center gap-4">
-            <span>lehuythai.com</span>
-
             {slide.type === "content" &&
             slide.lines &&
             revealState.visibleLines < slide.lines.length ? (
@@ -306,7 +304,7 @@ function SlideDisplay({
             ) : null}
             {slide.type === "content" &&
               slide.lines &&
-              revealState.visibleLines < slide.lines.length && (
+              revealState.visibleLines <= slide.lines.length && (
                 <>
                   <span className="text-zinc-500">•</span>{" "}
                   <span className="text-zinc-500">Esc để thoát</span>
@@ -425,10 +423,10 @@ export default function MarkdownToSlide() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">
-            Markdown to Slide
+            Simple Slide Maker
           </h1>
           <p className="text-zinc-300 text-lg max-w-2xl mx-auto">
-            Chuyển đổi markdown đơn giản thành slide trình chiếu chuyên nghiệp
+            Tạo slide thuyết trình đơn giản
           </p>
         </div>
 
@@ -436,9 +434,11 @@ export default function MarkdownToSlide() {
           {/* Input Section */}
           <div className="bg-zinc-800 rounded-4xl p-8">
             <div className="pb-8">
-              <h2 className="text-xl font-semibold text-zinc-100">Tạo Slide123</h2>
+              <h2 className="text-xl font-semibold text-zinc-100">
+                Nhập nội dung
+              </h2>
               <p className="text-sm text-zinc-300 mt-1">
-                Nhập tiêu đề và nội dung markdown cho slide
+                Tiêu đề hiện trước, các dòng sau line by line
               </p>
             </div>
 
@@ -446,7 +446,7 @@ export default function MarkdownToSlide() {
               {/* Title Input */}
               <div>
                 <label className="block text-sm font-medium text-zinc-200 mb-2">
-                  Tiêu đề Slide
+                  Tiêu đề
                 </label>
                 <input
                   type="text"
@@ -460,7 +460,7 @@ export default function MarkdownToSlide() {
               {/* Markdown Input */}
               <div>
                 <label className="block text-sm font-medium text-zinc-200 mb-2">
-                  Nội dung Markdown
+                  Nội dung
                 </label>
                 <textarea
                   value={markdown}

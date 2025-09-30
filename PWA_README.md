@@ -14,9 +14,9 @@ Dự án đã được cấu hình để hoạt động như một Progressive W
 ### 1. Manifest (`/public/manifest.json`)
 ```json
 {
-  "name": "LeHuyThai.com",
-  "short_name": "LeHuyThai", 
-  "description": "Trang web demo được xây dựng với Next.js 15 và Tailwind CSS 4",
+  "name": "Công Cụ Vui",
+  "short_name": "congcuvui", 
+  "description": "Công cụ vui",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#18181b",
