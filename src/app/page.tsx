@@ -1,4 +1,4 @@
-import { MonitorCheck, Plus, Presentation } from "lucide-react";
+import { MonitorCheck, Plus, Presentation, QrCode } from "lucide-react";
 import Link from "next/link";
 import DownloadApp from "@/components/DownloadApp";
 
@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="text-center mb-12">
-        <h1 className="text-4xl font-bold text-white mb-4">Công cụ vui</h1>
+        <h1 className="text-5xl font-bold text-white mb-4">Công cụ vui</h1>
         <p className="text-zinc-300 text-lg max-w-2xl mx-auto mb-6">
           Tổng hợp công cụ có ích cho đời
         </p>
@@ -37,12 +37,24 @@ export default function Home() {
             <h2 className="text-xl font-semibold text-zinc-100 mb-1">
               Simple Slide Maker
             </h2>
-            <div className="flex items-center gap-2 text-blue-400">
+            <div className="flex items-center gap-2 text-green-400">
               <div className="flex items-center gap-1">
                 <MonitorCheck className="w-4 h-4" />
-                <span className="text-sm">Desktop</span>
+                <span className="text-sm">Desktop Only</span>
               </div>
             </div>
+          </div>
+        </Link>
+
+        <Link
+          href="/qr-generator"
+          className="bg-zinc-800 rounded-2xl p-8 flex items-center gap-8 hover:bg-zinc-700 transition-colors duration-200"
+        >
+          <QrCode className="w-14 h-14" />
+          <div className="flex-1">
+            <h2 className="text-xl font-semibold text-zinc-100 mb-1">
+              QR Code Generator
+            </h2>
           </div>
         </Link>
 

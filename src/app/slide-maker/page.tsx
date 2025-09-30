@@ -3,6 +3,10 @@
 import { useState, useEffect, useRef } from "react";
 import { Play, ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 interface SlideElement {
   type: "h1" | "h2" | "h3" | "list" | "image" | "content";
@@ -454,25 +458,23 @@ export default function MarkdownToSlide() {
 
             <div className="space-y-6">
               {/* Title Input */}
-              <div>
-                <label className="block text-sm font-medium text-zinc-200 mb-2">
-                  Tiêu đề
-                </label>
-                <input
+              <div className="space-y-2">
+                <Label htmlFor="slide-title">Tiêu đề</Label>
+                <Input
+                  id="slide-title"
                   type="text"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
                   placeholder="Nhập tiêu đề slide..."
-                  className="w-full p-4 rounded-2xl bg-zinc-900 text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="bg-zinc-900 border-none focus:ring-pink-500"
                 />
               </div>
 
               {/* Markdown Input */}
-              <div>
-                <label className="block text-sm font-medium text-zinc-200 mb-2">
-                  Nội dung
-                </label>
-                <textarea
+              <div className="space-y-2">
+                <Label htmlFor="slide-content">Nội dung</Label>
+                <Textarea
+                  id="slide-content"
                   value={markdown}
                   onChange={(e) => setMarkdown(e.target.value)}
                   placeholder={`## Tiêu đề lớn  
@@ -485,19 +487,19 @@ export default function MarkdownToSlide() {
 - Mục 3
 
 ![](đường-dẫn-ảnh)`}
-                  className="w-full h-80 p-4 rounded-3xl font-mono text-sm bg-zinc-900 scrollbar-hide text-zinc-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
+                  className="max-h-[320px] scrollbar-hide bg-zinc-900 border-none focus:ring-pink-500 font-mono text-sm resize-none"
                 />
               </div>
 
               <div className="mt-6 flex justify-center">
-                <button
+                <Button
                   onClick={handleStart}
                   disabled={!markdown.trim() || !title.trim()}
-                  className="inline-flex items-center gap-3 px-6 py-3 bg-white text-zinc-900 rounded-xl font-medium hover:bg-zinc-200 disabled:opacity-50 disabled:cursor-not-allowed transition-colors duration-200 shadow-sm hover:shadow-md"
+                  className="inline-flex items-center cursor-pointer bg-white text-zinc-900 hover:bg-zinc-100 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  <Play className="w-5 h-5" />
+                  <Play className="w-4 h-4" />
                   Bắt đầu Slide
-                </button>
+                </Button>
               </div>
             </div>
           </div>
