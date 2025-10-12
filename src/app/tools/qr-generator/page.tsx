@@ -25,6 +25,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
+import Image from "next/image";
 
 export default function QRGenerator() {
   const [text, setText] = useState("");
@@ -135,9 +136,7 @@ export default function QRGenerator() {
           {/* Input Section */}
           <div className="bg-zinc-800 rounded-4xl p-8">
             <div className="pb-8">
-              <h2 className="text-xl font-semibold mb-2">
-                Tạo QR Code
-              </h2>
+              <h2 className="text-xl font-semibold mb-2">Tạo QR Code</h2>
               <p className="text-sm text-zinc-300">
                 Nhập nội dung và tùy chỉnh giao diện
               </p>
@@ -330,10 +329,12 @@ export default function QRGenerator() {
                       </div>
                     </div>
                   ) : qrCodeUrl ? (
-                    <img
+                    <Image
                       src={qrCodeUrl}
                       alt="Generated QR Code"
                       className="max-w-full h-auto rounded-2xl shadow-lg"
+                      width={256}
+                      height={256}
                     />
                   ) : (
                     <div className="w-64 h-64 bg-zinc-700 rounded-2xl flex items-center justify-center">

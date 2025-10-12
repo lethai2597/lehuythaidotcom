@@ -1,6 +1,6 @@
 "use client";
 
-import { Facebook, Youtube, Mail } from "lucide-react";
+import { Facebook, Youtube } from "lucide-react";
 import Link from "next/link";
 
 const scrollToSection = (sectionId: string) => {

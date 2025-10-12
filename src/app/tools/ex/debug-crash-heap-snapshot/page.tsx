@@ -1,7 +1,7 @@
 "use client";
 
 import { Zap, MemoryStick, AlertTriangle } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface MemoryInfo {
   usedJSHeapSize: number;
@@ -20,7 +20,7 @@ const formatBytes = (bytes: number, decimals = 2) => {
 };
 
 export default function MemoryLeakExample() {
-  const [leakyArray, setLeakyArray] = useState<string[][]>([]);
+  const [, setLeakyArray] = useState<string[][]>([]);
   const [memoryUsage, setMemoryUsage] = useState<MemoryInfo | null>(null);
 
   const causeLeak = () => {
@@ -30,7 +30,9 @@ export default function MemoryLeakExample() {
 
     // Cập nhật thông tin bộ nhớ ngay lập tức
     // `performance.memory` là một API đồng bộ, nên chúng ta có thể lấy giá trị ngay
-    setMemoryUsage((performance as Performance & { memory: MemoryInfo }).memory);
+    setMemoryUsage(
+      (performance as Performance & { memory: MemoryInfo }).memory
+    );
   };
 
   return (
