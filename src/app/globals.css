@@ -7,6 +7,21 @@ body {
   font-family: var(--font-be-vietnam-pro), Arial, Helvetica, sans-serif;
 }
 
+/* Hide scrollbar for entire page */
+html {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+html::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+body {
+  overflow-x: hidden;
+}
+
 /* Hide scrollbar */
 .scrollbar-hide {
   -ms-overflow-style: none;

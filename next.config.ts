@@ -28,6 +28,21 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // Redirects configuration
+  async redirects() {
+    return [
+      {
+        source: '/slide-maker',
+        destination: '/tools/slide-maker',
+        permanent: true,
+      },
+      {
+        source: '/qr-generator',
+        destination: '/tools/qr-generator',
+        permanent: true,
+      },
+    ];
+  },
   // Enable static optimization for better PWA performance
   trailingSlash: false,
   // Optimize images for PWA

@@ -10,13 +10,13 @@ const beVietnamPro = Be_Vietnam_Pro({
 });
 
 export const metadata: Metadata = {
-  title: "Công cụ vui",
-  description: "Công cụ vui",
+  title: "Lê Huy Thái | lehuythai.com",
+  description: "Lê Huy Thái",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Công cụ vui",
+    title: "Lê Huy Thái",
   },
   icons: {
     icon: [
@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body
-        className={`${beVietnamPro.variable} antialiased bg-zinc-900 text-zinc-200 min-h-screen`}
+        className={`${beVietnamPro.variable} antialiased bg-zinc-950 text-zinc-200 min-h-screen`}
       >
         {children}
       </body>

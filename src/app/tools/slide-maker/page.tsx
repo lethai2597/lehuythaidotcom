@@ -426,7 +426,7 @@ export default function MarkdownToSlide() {
     <div className="">
       {/* Back to home button */}
       <Link 
-        href="/"
+        href="/tools"
         className="absolute top-6 left-6 z-50 p-3 rounded-full bg-zinc-800/50 hover:bg-zinc-700/50 text-zinc-300 hover:text-white transition-all duration-200 backdrop-blur-sm"
         title="Về trang chủ"
       >
