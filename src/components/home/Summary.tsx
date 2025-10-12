@@ -240,7 +240,7 @@ export default function Summary() {
   return (
     <section id="summary">
       <div className="relative w-full overflow-hidden pt-40">
-        <div className="absolute z-10 top-0 left-0 w-full h-24 bg-gradient-to-b from-zinc-950 to-transparent"></div>
+        <div className="absolute z-10 top-0 left-0 w-full h-16 bg-gradient-to-b from-zinc-950 to-transparent"></div>
 
         {/* Marquee Background Rows */}
         <div className="absolute inset-0 z-0 space-y-4 -mt-8 blur-xs">
