@@ -59,13 +59,6 @@ export default function Footer() {
                 <Youtube className="w-5 h-5 md:w-5 md:h-5" />
               </a>
 
-              <a
-                href="mailto:lethai2597@gmail.com"
-                className="text-zinc-400 hover:text-violet-400 transition-colors p-1"
-                aria-label="Email"
-              >
-                <Mail className="w-5 h-5 md:w-5 md:h-5" />
-              </a>
             </div>
 
             <Link href="/tools">Công cụ</Link>
