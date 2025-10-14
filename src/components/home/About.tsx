@@ -130,15 +130,15 @@ export default function About() {
               className="text-xl sm:text-2xl font-semibold leading-tight text-gray-300"
               variants={mobileItem}
             >
-              FULL-STACK DEVELOPER
+              IT SERVICES PROVIDER
             </motion.div>
 
             <motion.div 
               className="h-10 rounded-full bg-zinc-800 flex items-center justify-center gap-3 px-4 animate-pulse w-fit"
               variants={mobileItem}
             >
-              <div className="w-3 h-3 rounded-full bg-gradient-to-br from-indigo-400 to-violet-400 relative">
-                <div className="absolute -top-1 -left-1 w-5 h-5 rounded-full bg-indigo-400/20 animate-ping duration-500"></div>
+              <div className="w-3 h-3 rounded-full bg-gradient-to-br from-green-400 to-green-500 relative">
+                <div className="absolute -top-1 -left-1 w-5 h-5 rounded-full bg-green-400/20 animate-ping duration-500"></div>
               </div>
               <span className="text-white text-sm sm:text-base">Available for collaboration</span>
             </motion.div>
@@ -176,17 +176,17 @@ export default function About() {
               className="absolute -right-1/2 w-1/2 bottom-32 text-4xl lg:text-5xl font-extrabold leading-tight text-right bg-gradient-to-br from-indigo-400 to-violet-400 bg-clip-text text-transparent"
               variants={slideFromRight}
             >
-              FULL-STACK
+              IT SERVICES
               <br />
-              DEVELOPER
+              PROVIDER
             </motion.div>
 
             <motion.div 
               className="h-10 rounded-full bg-zinc-800 flex items-center justify-center gap-3 absolute top-1/2 -left-12 px-4 animate-pulse"
               variants={slideFromLeft}
             >
-              <div className="w-3 h-3 rounded-full bg-gradient-to-br from-indigo-400 to-violet-400 relative">
-                <div className="absolute -top-1 -left-1 w-5 h-5 rounded-full bg-indigo-400/20 animate-ping duration-500"></div>
+              <div className="w-3 h-3 rounded-full bg-gradient-to-br from-green-400 to-green-500 relative">
+                <div className="absolute -top-1 -left-1 w-5 h-5 rounded-full bg-green-400/20 animate-ping duration-500"></div>
               </div>
               <span className="text-white">Available for collaboration</span>
             </motion.div>

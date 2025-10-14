@@ -1,6 +1,14 @@
 "use client";
 
-import { Phone, Mail, Facebook, Youtube, Send } from "lucide-react";
+import {
+  Phone,
+  Mail,
+  Facebook,
+  Youtube,
+  Send,
+  CheckCircle,
+  XCircle,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -62,11 +70,49 @@ export default function Contact() {
     email: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string;
+  }>({ type: null, message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
+    setIsSubmitting(true);
+    setSubmitStatus({ type: null, message: "" });
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus({
+          type: "success",
+          message:
+            "Tin nhắn đã được gửi thành công! Mình sẽ phản hồi sớm nhất có thể.",
+        });
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: data.error || "Có lỗi xảy ra, vui lòng thử lại sau",
+        });
+      }
+    } catch {
+      setSubmitStatus({
+        type: "error",
+        message: "Có lỗi xảy ra, vui lòng thử lại sau",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -87,20 +133,20 @@ export default function Contact() {
       </div>
 
       <div className="max-w-5xl mx-auto relative z-10 px-4">
-        <motion.div 
+        <motion.div
           className="text-center mb-12 md:mb-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={containerVariants}
         >
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-5xl font-bold text-white mb-4"
             variants={titleVariants}
           >
             Kết nối với mình
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-base md:text-lg max-w-2xl mx-auto text-zinc-400"
             variants={titleVariants}
           >
@@ -109,19 +155,19 @@ export default function Contact() {
           </motion.p>
         </motion.div>
 
-        <motion.div 
-          className="flex flex-col md:flex-row gap-8 md:gap-16 w-full"
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-16 w-full"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
         >
           {/* Contact Info */}
-          <motion.div 
-            className="space-y-6 md:space-y-8"
+          <motion.div
+            className="space-y-6 md:space-y-8 md:col-span-2"
             variants={itemVariants}
           >
-            <motion.h3 
+            <motion.h3
               className="text-lg md:text-xl font-bold text-white mb-4 md:mb-8"
               variants={itemVariants}
             >
@@ -129,7 +175,7 @@ export default function Contact() {
             </motion.h3>
 
             {/* Phone */}
-            <motion.div 
+            <motion.div
               className="flex items-center gap-3 md:gap-4"
               variants={itemVariants}
             >
@@ -150,7 +196,7 @@ export default function Contact() {
             </motion.div>
 
             {/* Email */}
-            <motion.div 
+            <motion.div
               className="flex items-center gap-3 md:gap-4"
               variants={itemVariants}
             >
@@ -171,10 +217,7 @@ export default function Contact() {
             </motion.div>
 
             {/* Social Links */}
-            <motion.div 
-              className="pt-6 md:pt-8"
-              variants={itemVariants}
-            >
+            <motion.div className="pt-6 md:pt-8" variants={itemVariants}>
               <h3 className="text-lg md:text-xl font-bold text-white mb-4 md:mb-8">
                 Theo dõi mình
               </h3>
@@ -221,8 +264,8 @@ export default function Contact() {
           </motion.div>
 
           {/* Contact Form */}
-          <motion.div 
-            className="bg-zinc-900/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl flex-1"
+          <motion.div
+            className="bg-zinc-900/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl md:col-span-3"
             variants={formVariants}
           >
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
@@ -279,7 +322,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Chia sẻ ý tưởng hoặc dự án của bạn..."
-                  rows={5}
+                  rows={6}
                   className="w-full px-4 py-3 rounded-xl bg-zinc-800/50 text-white placeholder:text-zinc-500 focus:outline-none focus:bg-zinc-800 transition-all resize-none text-sm md:text-base"
                   required
                 />
@@ -287,14 +330,43 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="group w-full overflow-hidden relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-br from-indigo-700 to-violet-700 cursor-pointer rounded-full font-bold transition-all duration-300"
+                disabled={isSubmitting}
+                className="group w-full overflow-hidden relative px-6 md:px-8 py-3 md:py-4 bg-gradient-to-br from-indigo-700 to-violet-700 cursor-pointer rounded-full font-bold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative z-10 flex items-center justify-center gap-2 text-white group-hover:scale-105 transition-all duration-300 text-sm md:text-base">
-                  <Send className="w-4 h-4 md:w-5 md:h-5" />
-                  <span>Gửi tin nhắn</span>
+                  {isSubmitting ? (
+                    <>
+                      <div className="w-4 h-4 md:w-5 md:h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                      <span>Đang gửi...</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className="w-4 h-4 md:w-5 md:h-5" />
+                      <span>Gửi tin nhắn</span>
+                    </>
+                  )}
                 </div>
               </button>
+
+              {/* Status Message */}
+              {submitStatus.type && (
+                <div
+                  className={`rounded-xl flex items-center gap-2 text-sm font-medium ${
+                    submitStatus.type === "success"
+                      ? "text-green-400"
+                      : "text-red-400"
+                  }`}
+                >
+                  {submitStatus.type === "success" && (
+                    <CheckCircle className="w-4 h-4 md:w-5 md:h-5" />
+                  )}
+                  {submitStatus.type === "error" && (
+                    <XCircle className="w-4 h-4 md:w-5 md:h-5" />
+                  )}
+                  <div className="flex-1">{submitStatus.message}</div>
+                </div>
+              )}
             </form>
           </motion.div>
         </motion.div>

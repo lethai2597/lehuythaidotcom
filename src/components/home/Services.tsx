@@ -91,7 +91,7 @@ export default function Services() {
         >
           <motion.div variants={cardVariants}>
             <SpotlightCard
-              className="aspect-square w-full !p-0 !rounded-4xl overflow-hidden hover:-translate-y-4 transition-all duration-300"
+              className="w-full group !p-0 !rounded-4xl overflow-hidden hover:-translate-y-4 transition-all duration-300"
               spotlightColor="rgba(251, 191, 36, 0.15)"
             >
               <div className="p-8">
@@ -105,13 +105,13 @@ export default function Services() {
                 </p>
               </div>
 
-              <div className="flex-1 relative">
+              <div className="flex-1 relative pb-8">
                 <Image
-                  src="/imgs/app-development.png"
+                  src="/imgs/web-development.svg"
                   alt="Web Development"
                   width={1000}
                   height={500}
-                  className="w-full"
+                  className="w-full max-w-xs mx-auto"
                 />
               </div>
             </SpotlightCard>
@@ -119,7 +119,7 @@ export default function Services() {
 
           <motion.div variants={cardVariants}>
             <SpotlightCard
-              className="aspect-square w-full !p-0 !rounded-4xl overflow-hidden hover:-translate-y-4 transition-all duration-300"
+              className="w-full group !p-0 !rounded-4xl overflow-hidden hover:-translate-y-4 transition-all duration-300"
               spotlightColor="rgba(52, 211, 153, 0.15)"
             >
               <div className="p-8">
@@ -133,13 +133,13 @@ export default function Services() {
                 </p>
               </div>
 
-              <div className="flex-1 relative">
+              <div className="flex-1 relative pb-8">
                 <Image
-                  src="/imgs/app-development.png"
+                  src="/imgs/app-development.svg"
                   alt="Web Development"
                   width={1000}
                   height={500}
-                  className="w-full"
+                  className="w-full max-w-xs mx-auto"
                 />
               </div>
             </SpotlightCard>
@@ -147,7 +147,7 @@ export default function Services() {
 
           <motion.div variants={cardVariants}>
             <SpotlightCard
-              className="aspect-square w-full !p-0 !rounded-4xl overflow-hidden hover:-translate-y-4 transition-all duration-300"
+              className="w-full group !p-0 !rounded-4xl overflow-hidden hover:-translate-y-4 transition-all duration-300"
               spotlightColor="rgba(96, 165, 250, 0.15)"
             >
               <div className="p-8">
@@ -161,13 +161,13 @@ export default function Services() {
                 </p>
               </div>
 
-              <div className="flex-1 relative">
+              <div className="flex-1 relative pb-8">
                 <Image
-                  src="/imgs/app-development.png"
+                  src="/imgs/blockchain-development.svg"
                   alt="Web Development"
                   width={1000}
                   height={500}
-                  className="w-full"
+                  className="w-full max-w-xs mx-auto"
                 />
               </div>
             </SpotlightCard>

@@ -8,19 +8,19 @@ import { useState, useEffect } from "react";
 const CORE_TECH = [
   {
     name: "JavaScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+    icon: "/icons/tech/javascript.svg",
   },
   {
     name: "Node.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg",
+    icon: "/icons/tech/nodejs.svg",
   },
   {
     name: "TypeScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+    icon: "/icons/tech/typescript.svg",
   },
   {
     name: "Git",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg",
+    icon: "/icons/tech/git.svg",
   },
 ];
 
@@ -28,35 +28,35 @@ const CORE_TECH = [
 const FRAMEWORKS_AND_DB = [
   {
     name: "React",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    icon: "/icons/tech/react.svg",
   },
   {
     name: "Next.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
+    icon: "/icons/tech/nextjs.svg",
   },
   {
     name: "React Native",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+    icon: "/icons/tech/react.svg",
   },
   {
     name: "Express.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg",
+    icon: "/icons/tech/express.svg",
   },
   {
     name: "Nest.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nestjs/nestjs-original.svg",
+    icon: "/icons/tech/nestjs.svg",
   },
   {
     name: "MySQL",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg",
+    icon: "/icons/tech/mysql.svg",
   },
   {
     name: "PostgreSQL",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
+    icon: "/icons/tech/postgresql.svg",
   },
   {
     name: "MongoDB",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
+    icon: "/icons/tech/mongodb.svg",
   },
 ];
 
@@ -82,12 +82,16 @@ export default function Skills() {
         <div className="absolute top-20 left-10 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-violet-500/5 rounded-full blur-3xl" />
-        
+
         {/* Dots Pattern */}
-        <div className="absolute inset-0 opacity-20" style={{
-          backgroundImage: 'radial-gradient(circle, rgba(99, 102, 241, 0.3) 1px, transparent 1px)',
-          backgroundSize: '40px 40px'
-        }} />
+        <div
+          className="absolute inset-0 opacity-20"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, rgba(99, 102, 241, 0.3) 1px, transparent 1px)",
+            backgroundSize: "40px 40px",
+          }}
+        />
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
@@ -245,185 +249,187 @@ export default function Skills() {
             </motion.div>
 
             {/* Vòng trong - Core Technologies */}
-            {isMounted && CORE_TECH.map((tech, index) => {
-              const angle =
-                (index * 2 * Math.PI) / CORE_TECH.length - Math.PI / 2;
-              const x = centerX + innerRadius * Math.cos(angle);
-              const y = centerY + innerRadius * Math.sin(angle);
-              const techId = `core-${index}`;
-              const isHovered = hoveredIndex === techId;
+            {isMounted &&
+              CORE_TECH.map((tech, index) => {
+                const angle =
+                  (index * 2 * Math.PI) / CORE_TECH.length - Math.PI / 2;
+                const x = centerX + innerRadius * Math.cos(angle);
+                const y = centerY + innerRadius * Math.sin(angle);
+                const techId = `core-${index}`;
+                const isHovered = hoveredIndex === techId;
 
-              return (
-                <motion.div
-                  key={techId}
-                  className="absolute top-1/2 left-1/2"
-                  style={{
-                    x: x,
-                    y: y,
-                  }}
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 0.7 + index * 0.1,
-                    type: "spring",
-                    stiffness: 200,
-                  }}
-                  whileHover={{ scale: 1.2 }}
-                  onMouseEnter={() => setHoveredIndex(techId)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                >
-                  <div className="relative -translate-x-1/2 -translate-y-1/2">
-                    <AnimatePresence>
-                      {isHovered && (
-                        <motion.div
-                          className="absolute inset-0 -m-4 rounded-full bg-gradient-to-br from-yellow-500/30 via-orange-500/30 to-red-500/30 blur-xl"
-                          initial={{ scale: 0, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          exit={{ scale: 0, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                        />
-                      )}
-                    </AnimatePresence>
+                return (
+                  <motion.div
+                    key={techId}
+                    className="absolute top-1/2 left-1/2"
+                    style={{
+                      x: x,
+                      y: y,
+                    }}
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 0.7 + index * 0.1,
+                      type: "spring",
+                      stiffness: 200,
+                    }}
+                    whileHover={{ scale: 1.2, transition: { duration: 0.2 } }}
+                    onMouseEnter={() => setHoveredIndex(techId)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                  >
+                    <div className="relative -translate-x-1/2 -translate-y-1/2">
+                      <AnimatePresence>
+                        {isHovered && (
+                          <motion.div
+                            className="absolute inset-0 -m-4 rounded-full bg-gradient-to-br from-yellow-500/30 via-orange-500/30 to-red-500/30 blur-xl"
+                            initial={{ scale: 0, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                          />
+                        )}
+                      </AnimatePresence>
 
-                    <motion.div
-                      className={`relative w-20 h-20 rounded-full bg-zinc-900 border-2 flex items-center justify-center ${
-                        isHovered
-                          ? "border-yellow-500/80 shadow-lg shadow-yellow-500/50"
-                          : "border-zinc-700"
-                      }`}
-                      animate={{
-                        borderColor: isHovered
-                          ? "rgba(234, 179, 8, 0.8)"
-                          : "rgba(63, 63, 70, 1)",
-                      }}
-                    >
                       <motion.div
+                        className={`relative w-20 h-20 rounded-full bg-zinc-900 border-2 flex items-center justify-center ${
+                          isHovered
+                            ? "border-yellow-500/80 shadow-lg shadow-yellow-500/50"
+                            : "border-zinc-700"
+                        }`}
                         animate={{
-                          filter: isHovered
-                            ? "brightness(1.2)"
-                            : "brightness(1)",
+                          borderColor: isHovered
+                            ? "rgba(234, 179, 8, 0.8)"
+                            : "rgba(63, 63, 70, 1)",
                         }}
                       >
-                        <Image
-                          src={tech.icon}
-                          alt={tech.name}
-                          width={40}
-                          height={40}
-                          className="relative z-10"
-                        />
-                      </motion.div>
-                    </motion.div>
-
-                    <AnimatePresence>
-                      {isHovered && (
                         <motion.div
-                          className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-zinc-800 text-white px-3 py-1 rounded-lg text-sm font-medium z-30"
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          transition={{ duration: 0.2 }}
+                          animate={{
+                            filter: isHovered
+                              ? "brightness(1.2)"
+                              : "brightness(1)",
+                          }}
                         >
-                          {tech.name}
+                          <Image
+                            src={tech.icon}
+                            alt={tech.name}
+                            width={40}
+                            height={40}
+                            className="relative z-10"
+                          />
                         </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                </motion.div>
-              );
-            })}
+                      </motion.div>
+
+                      <AnimatePresence>
+                        {isHovered && (
+                          <motion.div
+                            className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-zinc-800 text-white px-3 py-1 rounded-lg text-sm font-medium z-30"
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            {tech.name}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  </motion.div>
+                );
+              })}
 
             {/* Vòng ngoài - Frameworks & Databases */}
-            {isMounted && FRAMEWORKS_AND_DB.map((tech, index) => {
-              const angleOffset = Math.PI / FRAMEWORKS_AND_DB.length;
-              const angle =
-                (index * 2 * Math.PI) / FRAMEWORKS_AND_DB.length -
-                Math.PI / 2 +
-                angleOffset;
-              const x = centerX + outerRadius * Math.cos(angle);
-              const y = centerY + outerRadius * Math.sin(angle);
-              const techId = `outer-${index}`;
-              const isHovered = hoveredIndex === techId;
+            {isMounted &&
+              FRAMEWORKS_AND_DB.map((tech, index) => {
+                const angleOffset = Math.PI / FRAMEWORKS_AND_DB.length;
+                const angle =
+                  (index * 2 * Math.PI) / FRAMEWORKS_AND_DB.length -
+                  Math.PI / 2 +
+                  angleOffset;
+                const x = centerX + outerRadius * Math.cos(angle);
+                const y = centerY + outerRadius * Math.sin(angle);
+                const techId = `outer-${index}`;
+                const isHovered = hoveredIndex === techId;
 
-              return (
-                <motion.div
-                  key={techId}
-                  className="absolute top-1/2 left-1/2"
-                  style={{
-                    x: x,
-                    y: y,
-                  }}
-                  initial={{ scale: 0, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 1.1 + index * 0.08,
-                    type: "spring",
-                    stiffness: 200,
-                  }}
-                  whileHover={{ scale: 1.2 }}
-                  onMouseEnter={() => setHoveredIndex(techId)}
-                  onMouseLeave={() => setHoveredIndex(null)}
-                >
-                  <div className="relative -translate-x-1/2 -translate-y-1/2">
-                    <AnimatePresence>
-                      {isHovered && (
-                        <motion.div
-                          className="absolute inset-0 -m-4 rounded-full bg-gradient-to-br from-indigo-500/30 via-violet-500/30 to-purple-500/30 blur-xl"
-                          initial={{ scale: 0, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          exit={{ scale: 0, opacity: 0 }}
-                          transition={{ duration: 0.2 }}
-                        />
-                      )}
-                    </AnimatePresence>
+                return (
+                  <motion.div
+                    key={techId}
+                    className="absolute top-1/2 left-1/2"
+                    style={{
+                      x: x,
+                      y: y,
+                    }}
+                    initial={{ scale: 0, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{
+                      duration: 0.5,
+                      delay: 1.1 + index * 0.08,
+                      type: "spring",
+                      stiffness: 200,
+                    }}
+                    whileHover={{ scale: 1.2, transition: { duration: 0.2 } }}
+                    onMouseEnter={() => setHoveredIndex(techId)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                  >
+                    <div className="relative -translate-x-1/2 -translate-y-1/2">
+                      <AnimatePresence>
+                        {isHovered && (
+                          <motion.div
+                            className="absolute inset-0 -m-4 rounded-full bg-gradient-to-br from-indigo-500/30 via-violet-500/30 to-purple-500/30 blur-xl"
+                            initial={{ scale: 0, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0, opacity: 0 }}
+                            transition={{ duration: 0.2 }}
+                          />
+                        )}
+                      </AnimatePresence>
 
-                    <motion.div
-                      className={`relative w-20 h-20 rounded-full bg-zinc-900 border-2 flex items-center justify-center ${
-                        isHovered
-                          ? "border-indigo-500/80 shadow-lg shadow-indigo-500/50"
-                          : "border-zinc-700"
-                      }`}
-                      animate={{
-                        borderColor: isHovered
-                          ? "rgba(99, 102, 241, 0.8)"
-                          : "rgba(63, 63, 70, 1)",
-                      }}
-                    >
                       <motion.div
+                        className={`relative w-20 h-20 rounded-full bg-zinc-900 border-2 flex items-center justify-center ${
+                          isHovered
+                            ? "border-indigo-500/80 shadow-lg shadow-indigo-500/50"
+                            : "border-zinc-700"
+                        }`}
                         animate={{
-                          filter: isHovered
-                            ? "brightness(1.2)"
-                            : "brightness(1)",
+                          borderColor: isHovered
+                            ? "rgba(99, 102, 241, 0.8)"
+                            : "rgba(63, 63, 70, 1)",
                         }}
                       >
-                        <Image
-                          src={tech.icon}
-                          alt={tech.name}
-                          width={40}
-                          height={40}
-                          className="relative z-10"
-                        />
-                      </motion.div>
-                    </motion.div>
-
-                    <AnimatePresence>
-                      {isHovered && (
                         <motion.div
-                          className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-zinc-800 text-white px-3 py-1 rounded-lg text-sm font-medium z-30"
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: -10 }}
-                          transition={{ duration: 0.2 }}
+                          animate={{
+                            filter: isHovered
+                              ? "brightness(1.2)"
+                              : "brightness(1)",
+                          }}
                         >
-                          {tech.name}
+                          <Image
+                            src={tech.icon}
+                            alt={tech.name}
+                            width={40}
+                            height={40}
+                            className="relative z-10"
+                          />
                         </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-                </motion.div>
-              );
-            })}
+                      </motion.div>
+
+                      <AnimatePresence>
+                        {isHovered && (
+                          <motion.div
+                            className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-zinc-800 text-white px-3 py-1 rounded-lg text-sm font-medium z-30"
+                            initial={{ opacity: 0, y: -10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            exit={{ opacity: 0, y: -10 }}
+                            transition={{ duration: 0.2 }}
+                          >
+                            {tech.name}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  </motion.div>
+                );
+              })}
           </div>
         </div>
 
