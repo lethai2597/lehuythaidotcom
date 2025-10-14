@@ -96,19 +96,19 @@ export default function Contact() {
         setSubmitStatus({
           type: "success",
           message:
-            "Tin nhắn đã được gửi thành công! Mình sẽ phản hồi sớm nhất có thể.",
+            "Message sent successfully! I will respond as soon as possible.",
         });
         setFormData({ name: "", email: "", message: "" });
       } else {
         setSubmitStatus({
           type: "error",
-          message: data.error || "Có lỗi xảy ra, vui lòng thử lại sau",
+          message: data.error || "An error occurred, please try again later",
         });
       }
     } catch {
       setSubmitStatus({
         type: "error",
-        message: "Có lỗi xảy ra, vui lòng thử lại sau",
+        message: "An error occurred, please try again later",
       });
     } finally {
       setIsSubmitting(false);
@@ -132,7 +132,7 @@ export default function Contact() {
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-violet-500/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-5xl mx-auto relative z-10 px-4">
+      <div className="max-w-5xl mx-auto relative z-10 px-8">
         <motion.div
           className="text-center mb-12 md:mb-16"
           initial="hidden"
@@ -144,14 +144,14 @@ export default function Contact() {
             className="text-3xl md:text-5xl font-bold text-white mb-4"
             variants={titleVariants}
           >
-            Kết nối với mình
+            Connect with me
           </motion.h2>
           <motion.p
             className="text-base md:text-lg max-w-2xl mx-auto text-zinc-400"
             variants={titleVariants}
           >
-            Có ý tưởng hoặc dự án muốn thảo luận? Đừng ngần ngại liên hệ với
-            mình. Mình luôn sẵn sàng lắng nghe và hợp tác!
+            Have an idea or project to discuss? Don&apos;t hesitate to contact
+            me. I&apos;m always ready to listen and collaborate!
           </motion.p>
         </motion.div>
 
@@ -171,55 +171,51 @@ export default function Contact() {
               className="text-lg md:text-xl font-bold text-white mb-4 md:mb-8"
               variants={itemVariants}
             >
-              Liên hệ mình
+              Contact me
             </motion.h3>
 
             {/* Phone */}
-            <motion.div
-              className="flex items-center gap-3 md:gap-4"
+            <motion.a
+              href="tel:0961741678"
+              className="flex items-center gap-3 md:gap-4 group"
               variants={itemVariants}
             >
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-indigo-500/10 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-indigo-500/10 flex items-center justify-center shrink-0 group-hover:bg-indigo-500/20 transition-colors">
                 <Phone className="w-5 h-5 md:w-6 md:h-6 text-indigo-400" />
               </div>
               <div>
                 <h3 className="text-xs font-semibold text-zinc-500 mb-1">
-                  Số điện thoại
+                  Phone number
                 </h3>
-                <a
-                  href="tel:0961741678"
-                  className="text-base md:text-lg font-semibold text-white hover:text-indigo-400 transition-colors"
-                >
+                <p className="text-base md:text-lg font-semibold text-white group-hover:text-indigo-400 transition-colors">
                   0961 741 678
-                </a>
+                </p>
               </div>
-            </motion.div>
+            </motion.a>
 
             {/* Email */}
-            <motion.div
-              className="flex items-center gap-3 md:gap-4"
+            <motion.a
+              href="mailto:lethai2597@gmail.com"
+              className="flex items-center gap-3 md:gap-4 group"
               variants={itemVariants}
             >
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-violet-500/10 flex items-center justify-center shrink-0">
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-violet-500/10 flex items-center justify-center shrink-0 group-hover:bg-violet-500/20 transition-colors">
                 <Mail className="w-5 h-5 md:w-6 md:h-6 text-violet-400" />
               </div>
               <div>
                 <h3 className="text-xs font-semibold text-zinc-500 mb-1">
                   Email
                 </h3>
-                <a
-                  href="mailto:lethai2597@gmail.com"
-                  className="text-base md:text-lg font-semibold text-white hover:text-violet-400 transition-colors break-all"
-                >
+                <p className="text-base md:text-lg font-semibold text-white group-hover:text-violet-400 transition-colors break-all">
                   lethai2597@gmail.com
-                </a>
+                </p>
               </div>
-            </motion.div>
+            </motion.a>
 
             {/* Social Links */}
             <motion.div className="pt-6 md:pt-8" variants={itemVariants}>
               <h3 className="text-lg md:text-xl font-bold text-white mb-4 md:mb-8">
-                Theo dõi mình
+                Follow me
               </h3>
               <div className="space-y-3 md:space-y-4">
                 <a
@@ -275,7 +271,7 @@ export default function Contact() {
                     htmlFor="name"
                     className="block text-sm font-semibold text-zinc-400 mb-2"
                   >
-                    Tên của bạn
+                    Your name
                   </label>
                   <input
                     type="text"
@@ -283,7 +279,7 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="Nguyễn Văn A"
+                    placeholder="John Doe"
                     className="w-full px-4 py-3 rounded-xl bg-zinc-800/50 text-white placeholder:text-zinc-500 focus:outline-none focus:bg-zinc-800 transition-all text-sm md:text-base"
                     required
                   />
@@ -302,7 +298,7 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="email@... hoặc 09..."
+                    placeholder="email@... or 09..."
                     className="w-full px-4 py-3 rounded-xl bg-zinc-800/50 text-white placeholder:text-zinc-500 focus:outline-none focus:bg-zinc-800 transition-all text-sm md:text-base"
                     required
                   />
@@ -314,14 +310,14 @@ export default function Contact() {
                   htmlFor="message"
                   className="block text-sm font-semibold text-zinc-400 mb-2"
                 >
-                  Nội dung
+                  Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Chia sẻ ý tưởng hoặc dự án của bạn..."
+                  placeholder="Share your ideas or project..."
                   rows={6}
                   className="w-full px-4 py-3 rounded-xl bg-zinc-800/50 text-white placeholder:text-zinc-500 focus:outline-none focus:bg-zinc-800 transition-all resize-none text-sm md:text-base"
                   required
@@ -338,12 +334,12 @@ export default function Contact() {
                   {isSubmitting ? (
                     <>
                       <div className="w-4 h-4 md:w-5 md:h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                      <span>Đang gửi...</span>
+                      <span>Sending...</span>
                     </>
                   ) : (
                     <>
                       <Send className="w-4 h-4 md:w-5 md:h-5" />
-                      <span>Gửi tin nhắn</span>
+                      <span>Send message</span>
                     </>
                   )}
                 </div>

@@ -74,7 +74,7 @@ export default function Header() {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden xl:flex items-center gap-8">
             <div className="rounded-full backdrop-blur-md border bg-zinc-900/30 border-zinc-700/30 flex gap-2 p-2">
               <button
                 onClick={() => scrollToSection("home")}
@@ -173,7 +173,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+            className="xl:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
             aria-label="Toggle menu"
           >
             <span
@@ -197,7 +197,7 @@ export default function Header() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 z-40 lg:hidden transition-all duration-300 ${
+        className={`fixed inset-0 z-40 xl:hidden transition-all duration-300 ${
           isMobileMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"

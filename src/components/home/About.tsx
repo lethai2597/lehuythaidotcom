@@ -93,20 +93,17 @@ export default function About() {
         />
       </div>
 
-      <div className="container mx-auto p-4 flex justify-center relative z-10">
-        <div className="w-full max-w-2xl flex flex-col md:flex-row md:items-end relative">
+      <div className="container mx-auto p-8 flex justify-center relative z-10">
+        <div className="w-full max-w-sm xl:max-w-2xl flex flex-col md:flex-row md:items-end relative">
           {/* Mobile Layout */}
-          <motion.div 
+          <motion.div
             className="md:hidden flex flex-col gap-6"
             variants={mobileContainer}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.2 }}
           >
-            <motion.div 
-              className="w-full max-w-sm mx-auto"
-              variants={scaleIn}
-            >
+            <motion.div className="w-full max-w-sm mx-auto" variants={scaleIn}>
               <Image
                 src="/imgs/profile.png"
                 alt="Le Huy Thai"
@@ -117,35 +114,37 @@ export default function About() {
             </motion.div>
 
             <motion.div
-              className="text-4xl sm:text-5xl font-black leading-tight mix-blend-luminosity"
+              className="text-5xl font-black leading-tight mix-blend-luminosity"
               style={{ textShadow: "#0000004d 0px 0px 10px" }}
               variants={mobileItem}
             >
-              XIN CHÀO,
+              HELLO,
               <br />
-              MÌNH LÀ THÁI
+              I&apos;M THAI
             </motion.div>
 
-            <motion.div 
-              className="text-xl sm:text-2xl font-semibold leading-tight text-gray-300"
+            <motion.div
+              className="text-2xl font-semibold leading-tight text-gray-300"
               variants={mobileItem}
             >
               IT SERVICES PROVIDER
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="h-10 rounded-full bg-zinc-800 flex items-center justify-center gap-3 px-4 animate-pulse w-fit"
               variants={mobileItem}
             >
               <div className="w-3 h-3 rounded-full bg-gradient-to-br from-green-400 to-green-500 relative">
                 <div className="absolute -top-1 -left-1 w-5 h-5 rounded-full bg-green-400/20 animate-ping duration-500"></div>
               </div>
-              <span className="text-white text-sm sm:text-base">Available for collaboration</span>
+              <span className="text-white text-sm">
+                Available for collaboration
+              </span>
             </motion.div>
           </motion.div>
 
           {/* Desktop Layout */}
-          <motion.div 
+          <motion.div
             className="hidden md:block aspect-square w-full relative"
             variants={desktopContainer}
             initial="hidden"
@@ -163,17 +162,17 @@ export default function About() {
             </motion.div>
 
             <motion.div
-              className="absolute bottom-32 -left-1/3 text-5xl lg:text-7xl font-black leading-tight mix-blend-luminosity"
+              className="absolute bottom-32 -left-1/3 text-5xl xl:text-8xl font-black leading-tight mix-blend-luminosity"
               style={{ textShadow: "#0000004d 0px 0px 10px" }}
               variants={slideFromLeft}
             >
-              XIN CHÀO,
+              HELLO,
               <br />
-              MÌNH LÀ THÁI
+              I&apos;M THAI
             </motion.div>
 
-            <motion.div 
-              className="absolute -right-1/2 w-1/2 bottom-32 text-4xl lg:text-5xl font-extrabold leading-tight text-right bg-gradient-to-br from-indigo-400 to-violet-400 bg-clip-text text-transparent"
+            <motion.div
+              className="absolute -right-1/2 w-1/2 bottom-32 text-2xl xl:text-5xl font-extrabold leading-tight text-right bg-gradient-to-br from-indigo-400 to-violet-400 bg-clip-text text-transparent"
               variants={slideFromRight}
             >
               IT SERVICES
@@ -181,8 +180,8 @@ export default function About() {
               PROVIDER
             </motion.div>
 
-            <motion.div 
-              className="h-10 rounded-full bg-zinc-800 flex items-center justify-center gap-3 absolute top-1/2 -left-12 px-4 animate-pulse"
+            <motion.div
+              className="h-10 rounded-full bg-zinc-800 text-sm xl:text-base flex items-center justify-center gap-3 absolute top-24 xl:top-1/2 -left-12 px-4 animate-pulse"
               variants={slideFromLeft}
             >
               <div className="w-3 h-3 rounded-full bg-gradient-to-br from-green-400 to-green-500 relative">
@@ -191,12 +190,11 @@ export default function About() {
               <span className="text-white">Available for collaboration</span>
             </motion.div>
 
-            <motion.div 
-              className="absolute w-1/2 top-1/2 -right-1/2 text-white text-right mr-16"
+            <motion.div
+              className="absolute w-1/2 top-1/2 -right-1/2 text-white text-right text-lg mr-16 hidden xl:block"
               variants={slideFromRight}
             >
-              Đam mê xây dựng giải pháp số thông minh giúp doanh nghiệp vận hành
-              hiệu quả.
+              Passionate about building smart digital solutions for businesses.
             </motion.div>
           </motion.div>
         </div>

@@ -58,17 +58,21 @@ export default function Footer() {
               >
                 <Youtube className="w-5 h-5 md:w-5 md:h-5" />
               </a>
-
             </div>
 
-            <Link href="/tools">Công cụ</Link>
+            <Link
+              className="md:px-4 py-1.5 md:py-2 text-xs md:text-sm text-zinc-300 hover:text-white transition-colors"
+              href="/tools"
+            >
+              Tools
+            </Link>
 
             {/* Contact Button */}
             <button
               onClick={() => scrollToSection("contact")}
-              className="px-3 md:px-4 py-1.5 md:py-2 text-xs md:text-sm text-zinc-300 hover:text-white transition-colors"
+              className="md:px-4 py-1.5 md:py-2 text-xs md:text-sm text-zinc-300 hover:text-white transition-colors"
             >
-              Liên hệ
+              Contact
             </button>
           </div>
         </div>

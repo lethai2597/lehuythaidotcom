@@ -60,7 +60,7 @@ export default function Services() {
         }} />
       </div>
 
-      <div className="container mx-auto p-4 relative z-10">
+      <div className="container mx-auto p-8 relative z-10">
         <motion.div 
           className="text-center mb-16"
           initial="hidden"
@@ -72,13 +72,13 @@ export default function Services() {
             className="text-3xl md:text-5xl font-bold text-white mb-4"
             variants={titleVariants}
           >
-            Mình có thể làm gì?
+            What can I do?
           </motion.h2>
           <motion.p 
             className="text-base md:text-lg max-w-2xl mx-auto mb-8"
             variants={titleVariants}
           >
-            Mình có thể giúp bạn xây dựng website, ứng dụng, blockchain, ...
+            I can help you build websites, applications, blockchain solutions, ...
           </motion.p>
         </motion.div>
 
@@ -99,9 +99,9 @@ export default function Services() {
                   Web Development
                 </h3>
                 <p className="leading-relaxed text-sm md:text-base">
-                  Xây dựng website hiện đại, responsive với NextJs ReactJs. Tối ưu
-                  SEO, tốc độ tải trang và trải nghiệm người dùng. Landing page,
-                  CMS, E-commerce đều, ...
+                  Building modern, responsive websites with NextJS ReactJS. Optimizing
+                  SEO, page loading speed and user experience. Landing pages,
+                  CMS, E-commerce, and more...
                 </p>
               </div>
 
@@ -127,9 +127,9 @@ export default function Services() {
                   App Development
                 </h3>
                 <p className="leading-relaxed text-sm md:text-base">
-                  Phát triển ứng dụng mobile iOS & Android với React Native. Giao
-                  diện mượt mà, tích hợp API, push notification và offline-first
-                  cho trải nghiệm tốt nhất.
+                  Developing mobile iOS & Android applications with React Native. Smooth
+                  interface, API integration, push notifications and offline-first
+                  for the best experience.
                 </p>
               </div>
 
@@ -156,8 +156,8 @@ export default function Services() {
                 </h3>
                 <p className="leading-relaxed text-sm md:text-base">
                   Smart Contract (Solidity), DApp, Web3 integration. NFT
-                  marketplace, DeFi protocol, DAO platform. Audit & tối ưu gas fee
-                  cho mọi dự án.
+                  marketplace, DeFi protocol, DAO platform. Audit & optimize gas fees
+                  for all projects.
                 </p>
               </div>
 

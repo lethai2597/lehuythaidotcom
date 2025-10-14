@@ -239,11 +239,11 @@ export default function Summary() {
   };
   return (
     <section id="summary">
-      <div className="relative w-full overflow-hidden pt-40">
-        <div className="absolute z-10 top-0 left-0 w-full h-16 bg-gradient-to-b from-zinc-950 to-transparent"></div>
+      <div className="relative w-full overflow-hidden pt-48 px-8">
+        <div className="absolute z-10 top-0 left-0 w-full h-8 bg-gradient-to-b from-zinc-950 to-transparent"></div>
 
         {/* Marquee Background Rows */}
-        <div className="absolute inset-0 z-0 space-y-4 -mt-8 blur-xs">
+        <div className="absolute inset-0 z-0 space-y-4 blur-xs">
           {[...Array(7)].map((_, rowIndex) => (
             <div key={rowIndex} className="flex h-40 overflow-hidden">
               <div
@@ -296,37 +296,38 @@ export default function Summary() {
 
         {/* <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/30 via-black/20 to-black/10"></div> */}
 
-        <motion.div 
+        <motion.div
           className="relative z-10 container mx-auto text-center"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={containerVariants}
         >
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-5xl font-bold mb-4 text-white"
             variants={titleVariants}
           >
-            Có một ý tưởng?
+            Have an idea?
           </motion.h2>
-          <motion.p 
+          <motion.p
             className="text-base md:text-lg max-w-xl mx-auto leading-relaxed mb-8"
             variants={textVariants}
           >
-            Bạn có một ý tưởng sáng tạo hoặc đang gặp vấn đề cần giải quyết? Hãy
-            liên hệ với mình để cùng nhau biến tầm nhìn thành hiện thực.
+            Do you have a creative idea or are facing a problem that needs
+            solving? Let&apos;s connect to turn your vision into reality
+            together.
           </motion.p>
-          <motion.div 
+          <motion.div
             className="flex justify-center gap-4"
             variants={buttonVariants}
           >
-            <button 
+            <button
               onClick={() => scrollToSection("contact")}
               className="group overflow-hidden relative px-8 md:px-16 py-3 md:py-4 bg-gradient-to-br from-indigo-700 to-violet-700 cursor-pointer rounded-full backdrop-blur-sm font-bold transition-all duration-300"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-violet-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative z-10 group-hover:scale-105 transition-all duration-300 text-white">
-                Liên hệ ngay
+                Contact now
               </div>
             </button>
           </motion.div>

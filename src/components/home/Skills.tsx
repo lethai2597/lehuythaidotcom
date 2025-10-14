@@ -94,7 +94,7 @@ export default function Skills() {
         />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-8 relative z-10">
         {/* Header with fade in animation */}
         <motion.div
           className="text-center"
@@ -104,10 +104,10 @@ export default function Skills() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-3xl md:text-5xl font-bold leading-relaxed text-white mb-4">
-            Mình sử dụng công nghệ gì?
+            What technologies do I use?
           </h2>
           <p className="text-zinc-400 text-base md:text-lg max-w-2xl mx-auto">
-            Thành thạo các công nghệ hiện đại để xây dựng sản phẩm chất lượng
+            Mastering modern technologies to build quality products
           </p>
         </motion.div>
 
@@ -441,7 +441,7 @@ export default function Skills() {
           transition={{ duration: 0.6, delay: 1.5 }}
         >
           <p className="text-zinc-500 text-sm">
-            Và còn nhiều công nghệ khác...
+            And many more technologies...
           </p>
         </motion.div>
       </div>
