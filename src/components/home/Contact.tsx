@@ -156,64 +156,70 @@ export default function Contact() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-16 w-full"
+          className="grid grid-cols-1 md:grid-cols-5 gap-4 md:gap-8 w-full"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
         >
           {/* Contact Info */}
-          <motion.div
-            className="space-y-6 md:space-y-8 md:col-span-2"
-            variants={itemVariants}
-          >
-            <motion.h3
-              className="text-lg md:text-xl font-bold text-white mb-4 md:mb-8"
+          <div className="md:col-span-2 space-y-4 md:space-y-8">
+            {/* Contact Me Block */}
+            <motion.div
+              className="bg-zinc-900/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl"
               variants={itemVariants}
             >
-              Contact me
-            </motion.h3>
+              <motion.h3
+                className="text-lg md:text-xl font-bold text-white mb-4 md:mb-8"
+                variants={itemVariants}
+              >
+                Contact me
+              </motion.h3>
 
-            {/* Phone */}
-            <motion.a
-              href="tel:0961741678"
-              className="flex items-center gap-3 md:gap-4 group"
+              {/* Phone */}
+              <motion.a
+                href="tel:0961741678"
+                className="flex items-center gap-3 md:gap-4 group"
+                variants={itemVariants}
+              >
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-indigo-500/10 flex items-center justify-center shrink-0 group-hover:bg-indigo-500/20 transition-colors">
+                  <Phone className="w-5 h-5 md:w-6 md:h-6 text-indigo-400" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-semibold text-zinc-500 mb-1">
+                    Phone number
+                  </h3>
+                  <p className="text-base md:text-lg font-semibold text-white group-hover:text-indigo-400 transition-colors">
+                    0961 741 678
+                  </p>
+                </div>
+              </motion.a>
+
+              {/* Email */}
+              <motion.a
+                href="mailto:lethai2597@gmail.com"
+                className="flex items-center gap-3 md:gap-4 group mt-4 md:mt-6"
+                variants={itemVariants}
+              >
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-violet-500/10 flex items-center justify-center shrink-0 group-hover:bg-violet-500/20 transition-colors">
+                  <Mail className="w-5 h-5 md:w-6 md:h-6 text-violet-400" />
+                </div>
+                <div>
+                  <h3 className="text-xs font-semibold text-zinc-500 mb-1">
+                    Email
+                  </h3>
+                  <p className="text-base md:text-lg font-semibold text-white group-hover:text-violet-400 transition-colors break-all">
+                    lethai2597@gmail.com
+                  </p>
+                </div>
+              </motion.a>
+            </motion.div>
+
+            {/* Follow Me Block */}
+            <motion.div
+              className="bg-zinc-900/50 backdrop-blur-sm p-6 md:p-8 rounded-3xl"
               variants={itemVariants}
             >
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-indigo-500/10 flex items-center justify-center shrink-0 group-hover:bg-indigo-500/20 transition-colors">
-                <Phone className="w-5 h-5 md:w-6 md:h-6 text-indigo-400" />
-              </div>
-              <div>
-                <h3 className="text-xs font-semibold text-zinc-500 mb-1">
-                  Phone number
-                </h3>
-                <p className="text-base md:text-lg font-semibold text-white group-hover:text-indigo-400 transition-colors">
-                  0961 741 678
-                </p>
-              </div>
-            </motion.a>
-
-            {/* Email */}
-            <motion.a
-              href="mailto:lethai2597@gmail.com"
-              className="flex items-center gap-3 md:gap-4 group"
-              variants={itemVariants}
-            >
-              <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-violet-500/10 flex items-center justify-center shrink-0 group-hover:bg-violet-500/20 transition-colors">
-                <Mail className="w-5 h-5 md:w-6 md:h-6 text-violet-400" />
-              </div>
-              <div>
-                <h3 className="text-xs font-semibold text-zinc-500 mb-1">
-                  Email
-                </h3>
-                <p className="text-base md:text-lg font-semibold text-white group-hover:text-violet-400 transition-colors break-all">
-                  lethai2597@gmail.com
-                </p>
-              </div>
-            </motion.a>
-
-            {/* Social Links */}
-            <motion.div className="pt-6 md:pt-8" variants={itemVariants}>
               <h3 className="text-lg md:text-xl font-bold text-white mb-4 md:mb-8">
                 Follow me
               </h3>
@@ -257,7 +263,7 @@ export default function Contact() {
                 </a>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
 
           {/* Contact Form */}
           <motion.div
@@ -265,7 +271,7 @@ export default function Contact() {
             variants={formVariants}
           >
             <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="grid gap-4">
                 <div>
                   <label
                     htmlFor="name"
@@ -298,7 +304,7 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="email@... or 09..."
+                    placeholder="email@example.com or +84961 741 678"
                     className="w-full px-4 py-3 rounded-xl bg-zinc-800/50 text-white placeholder:text-zinc-500 focus:outline-none focus:bg-zinc-800 transition-all text-sm md:text-base"
                     required
                   />
@@ -318,7 +324,7 @@ export default function Contact() {
                   value={formData.message}
                   onChange={handleChange}
                   placeholder="Share your ideas or project..."
-                  rows={6}
+                  rows={5}
                   className="w-full px-4 py-3 rounded-xl bg-zinc-800/50 text-white placeholder:text-zinc-500 focus:outline-none focus:bg-zinc-800 transition-all resize-none text-sm md:text-base"
                   required
                 />
