@@ -296,7 +296,7 @@ export default function Contact() {
                     htmlFor="email"
                     className="block text-sm font-semibold text-zinc-400 mb-2"
                   >
-                    Email/SĐT
+                    Email or Phone number
                   </label>
                   <input
                     type="text"

@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowBigDownDash } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const scrollToSection = (sectionId: string) => {
@@ -142,21 +143,16 @@ export default function Header() {
                 ></div>
                 Contact
               </button>
-
-              <button
-                onClick={() => scrollToSection("summary")}
-                className="px-4 py-2 flex items-center cursor-pointer gap-2 transition-all duration-500 hover:-translate-y-0.5 hover:text-white"
-              >
-                <div
-                  className={`rounded-full transition-all duration-300 ${
-                    activeSection === "summary"
-                      ? "w-2 h-2 bg-zinc-200"
-                      : "w-0 h-0 bg-transparent"
-                  }`}
-                ></div>
-                Summary
-              </button>
             </div>
+
+            <a
+              href="/files/resume.pdf"
+              download="Le_Huy_Thai_Resume.pdf"
+              className="group inline-flex items-center gap-2 px-4 py-2 bg-zinc-800/50 hover:bg-zinc-700/50 text-white font-medium rounded-full transition-all duration-300 hover:scale-105 backdrop-blur-sm border border-zinc-700/30 h-12"
+            >
+              <ArrowBigDownDash className="w-5 h-5" />
+              Download CV
+            </a>
 
             <button
               onClick={() => scrollToSection("contact")}
@@ -208,7 +204,7 @@ export default function Header() {
           onClick={() => setIsMobileMenuOpen(false)}
         ></div>
         <div
-          className={`absolute top-20 left-0 right-0 bg-zinc-900/95 backdrop-blur-md border-t border-zinc-800 transition-transform duration-300 ${
+          className={`absolute top-20 left-0 right-0 bg-zinc-900/95 backdrop-blur-md transition-transform duration-300 ${
             isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
           }`}
         >
@@ -288,23 +284,16 @@ export default function Header() {
               ></div>
               <span className="text-lg">Contact</span>
             </button>
-            <button
-              onClick={() => handleMenuClick("summary")}
-              className={`px-4 py-3 flex items-center gap-3 transition-all duration-300 hover:bg-zinc-800/50 rounded-lg ${
-                activeSection === "summary" ? "bg-zinc-800/50" : ""
-              }`}
-            >
-              <div
-                className={`rounded-full transition-all duration-300 ${
-                  activeSection === "summary"
-                    ? "w-2 h-2 bg-indigo-400"
-                    : "w-2 h-2 transparent"
-                }`}
-              ></div>
-              <span className="text-lg">Summary</span>
-            </button>
 
-            <div className="mt-4 pt-4 border-t border-zinc-800">
+            <div className="mt-4 pt-4 border-t border-zinc-800 space-y-3">
+              <a
+                href="/files/resume.pdf"
+                download="Le_Huy_Thai_Resume.pdf"
+                className="w-full bg-zinc-800/50 hover:bg-zinc-700/50 text-white font-medium rounded-full flex items-center justify-center gap-2 p-4 transition-all duration-300 border border-zinc-700/30"
+              >
+                <ArrowBigDownDash className="w-5 h-5" />
+                Download CV
+              </a>
               <button
                 onClick={() => handleMenuClick("contact")}
                 className="w-full bg-gradient-to-br from-indigo-700 to-violet-700 cursor-pointer rounded-full flex items-center justify-center gap-2 p-4 overflow-hidden group transition-all duration-300"
