@@ -30,8 +30,8 @@ export default function BrideInformation() {
           </h2>
 
           <div className="mb-8 max-w-xl mx-auto font-merriweather text-gray-700 leading-relaxed">
-            "Mong bạn sắp xếp thời gian để đến dự lễ cưới và bữa cơm thân mật
-            của chúng mình. Cảm ơn bạn đã đến dự."
+            &ldquo;Mong bạn sắp xếp thời gian để đến dự lễ cưới và bữa cơm thân mật
+            của chúng mình. Cảm ơn bạn đã đến dự.&rdquo;
           </div>
 
           <div className="mb-12">
@@ -39,7 +39,7 @@ export default function BrideInformation() {
               LỄ CƯỚI & TIỆC CƯỚI
             </div>
             <div className="text-xl font-merriweather mb-4">
-              10 GIỜ 0' - CHỦ NHẬT - 26 Tháng 10, 2025
+              10 GIỜ 0&apos; - CHỦ NHẬT - 26 Tháng 10, 2025
             </div>
             <div className="text-2xl font-merriweather font-bold">
               NHÀ HÀNG ĐẤT VIỆT

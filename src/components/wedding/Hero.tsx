@@ -1,6 +1,5 @@
 import Image from "next/image";
 import CircularText from "../CircularText";
-import ShinyText from "../ShinyText";
 
 export default function Hero() {
   return (

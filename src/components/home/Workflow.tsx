@@ -7,9 +7,7 @@ import {
   PenTool,
   Code2,
   Rocket,
-  SquareArrowOutUpRight,
   TrendingUp,
-  Earth,
   Globe,
 } from "lucide-react";
 import ShinyText from "../ShinyText";

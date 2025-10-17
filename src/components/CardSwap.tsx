@@ -5,7 +5,6 @@ import React, {
   isValidElement,
   ReactElement,
   ReactNode,
-  RefObject,
   useEffect,
   useMemo,
   useRef,

@@ -18,7 +18,7 @@ const PHOTOS = new Array(40)
 
 export default function PhotoGallery() {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
-  const [mainSwiper, setMainSwiper] = useState<SwiperType | null>(null);
+  const [, setMainSwiper] = useState<SwiperType | null>(null);
 
   return (
     <section id="photo-gallery" className="py-40">
