@@ -25,7 +25,7 @@ export default function GroomInformation() {
         </div>
         <div className="flex-1 text-center">
           <div className="text-2xl font-merriweather mb-2">CHÚ RỂ</div>
-          <h2 className="text-7xl md:text-9xl mb-4 font-medium font-allura leading-tight text-transparent bg-clip-text bg-gradient-to-br from-black to-gray-400">
+          <h2 className="text-7xl xl:text-9xl mb-4 font-medium font-allura leading-tight text-transparent bg-clip-text bg-gradient-to-br from-black to-gray-400">
             Huy Thái
           </h2>
 
