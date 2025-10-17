@@ -111,7 +111,7 @@ export default function Services() {
                   alt="Web Development"
                   width={1000}
                   height={500}
-                  className="w-full max-w-xs mx-auto"
+                  className="w-full max-w-full mx-auto"
                 />
               </div>
             </SpotlightCard>
@@ -139,7 +139,7 @@ export default function Services() {
                   alt="Web Development"
                   width={1000}
                   height={500}
-                  className="w-full max-w-xs mx-auto"
+                  className="w-full max-w-full mx-auto"
                 />
               </div>
             </SpotlightCard>
@@ -167,7 +167,7 @@ export default function Services() {
                   alt="Web Development"
                   width={1000}
                   height={500}
-                  className="w-full max-w-xs mx-auto"
+                  className="w-full max-w-full mx-auto"
                 />
               </div>
             </SpotlightCard>

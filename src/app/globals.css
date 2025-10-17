@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura:wght@400&family=Merriweather:wght@300;400;700&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -159,5 +160,13 @@ body {
   
   .animate-shine {
     animation: shine 5s linear infinite;
+  }
+
+  .font-allura {
+    font-family: 'Allura', cursive;
+  }
+
+  .font-merriweather {
+    font-family: 'Merriweather', serif;
   }
 }
