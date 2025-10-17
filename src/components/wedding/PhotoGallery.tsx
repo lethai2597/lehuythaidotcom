@@ -12,9 +12,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
 
-const PHOTOS = new Array(40)
+const PHOTOS = new Array(41)
   .fill(0)
-  .map((_, index) => `/wedding/${index + 8}.jpg`);
+  .map((_, index) => `/wedding/${index + 1}.jpg`)
+  .sort(() => Math.random() - 0.5);
 
 export default function PhotoGallery() {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
@@ -22,9 +23,9 @@ export default function PhotoGallery() {
 
   return (
     <section id="photo-gallery" className="py-40">
-      <div className="container mx-auto">
+      <div className="container mx-auto px-8">
         <div className="text-center mb-8">
-          <h2 className="text-9xl font-medium font-allura mb-2 leading-tight text-transparent bg-clip-text bg-gradient-to-br from-black to-gray-400">
+          <h2 className="text-7xl xl:text-9xl font-medium font-allura mb-2 leading-tight text-transparent bg-clip-text bg-gradient-to-br from-black to-gray-400">
             Khoảnh Khắc
           </h2>
           <p className="text-gray-500 font-merriweather max-w-2xl mx-auto">

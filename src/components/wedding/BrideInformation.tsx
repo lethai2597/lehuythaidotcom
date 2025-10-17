@@ -19,6 +19,7 @@ export default function BrideInformation() {
               width={1168}
               height={1752}
               className="w-full h-full object-cover"
+              style={{ objectPosition: 'top' }}
             />
             <div className="absolute inset-0 border-2 border-white/30 m-4 rounded-full"></div>
           </div>
