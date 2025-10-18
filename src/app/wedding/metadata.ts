@@ -40,3 +40,5 @@ export const weddingMetadata: Metadata = {
     "apple-mobile-web-app-title": "Huy Thái & Thuỷ Tiên",
   },
 };
+
+

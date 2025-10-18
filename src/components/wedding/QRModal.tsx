@@ -44,3 +44,5 @@ export default function QRModal({ isOpen, onClose, qrImage }: QRModalProps) {
     </div>
   );
 }
+
+

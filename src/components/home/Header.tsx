@@ -69,9 +69,9 @@ export default function Header() {
         <div className="container mx-auto h-full flex items-center justify-between px-4 md:px-8">
           <button
             onClick={() => scrollToSection("home")}
-            className="text-2xl md:text-3xl font-black hover:text-indigo-400 transition-colors"
+            className="text-xl md:text-2xl font-black hover:text-indigo-400 transition-colors"
           >
-            I&apos;m Thai
+            lehuythai.com
           </button>
 
           {/* Desktop Navigation */}

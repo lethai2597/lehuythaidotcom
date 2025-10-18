@@ -28,7 +28,7 @@ export default function Footer() {
               onClick={() => scrollToSection("home")}
               className="text-base md:text-lg font-bold hover:text-zinc-400 transition-colors text-center md:text-left"
             >
-              I&apos;m Thai
+              lehuythai.com
             </button>
             <p className="text-xs text-zinc-600">
               © {new Date().getFullYear()} All rights reserved.
