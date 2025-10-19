@@ -1,0 +1,48 @@
+Mình sẽ thông não cho anh em mới về cách deploy 1 trang web cơ bản, cần làm gì và tại sao.
+Thì khi chúng ta làm 1 cái dự án deploy là một trong những bước về tech quan trọng để biến 1 dự án local thành production.
+Có một số cách/nền tảng deploy chuyên dụng kiểu Vercel, Netlify, ... mình sẽ không bàn ở đây. Vì post này mình muốn nói đến những thứ nó bản chất nhất.
+Nội dung bài viết này sẽ thiên về mindset để khi anh em thực hành, hay làm theo 1 cái tutorial nào thì sẽ không bị theo kiểu thao thao bất tuyệt, không hiểu mình đang làm bước nào, chạy lệnh này để làm gì, làm cái kia làm gì.
+
+Disclamer: 
+Bài này viết theo kiểu dễ hiểu, dựa vào kiến thức của mình, thay vì đi cóp nhặt các nguồn, nên có thể có chỗ chưa đúng tuyệt đối (nhưng mà dễ hiểu).
+
+Đầu tiên mình thấy các khó khăn chung khi các bạn mới tiếp xúc với món này (trong đó có cả mình) thường là 2 vấn để lớn:
+1. Không có cái nhìn tổng quát, không hiểu bản chất deploy là làm gì
+2. Không có nhiều kỹ năng sử dụng hệ điều hành mà server chạy (ví dụ như là Linux)
+
+Về cái ý số 2 thì mình không bàn ở series này, vì gần như nó không liên quan lắm đến việc deploy website, nó như kiểu phạm trù khác vậy.
+
+Oke, thì tổng quát để deploy được 1 cái website thì chúng ta sẽ cần đi qua 1 số bước sau, sau đó mình nói chi tiết từng bước:
+
+Bước 1: Thuê 1 cái server
+Bước 2: Chui vào trong cái server đó
+Bước 3: Làm code của chúng ta xuất hiện trên cái server đó
+Bước 4: Làm code của chúng ta chạy được trên cái server đó
+Bước 5: Mua 1 cái tên miền
+Bước 6: Trỏ được tên miền vào server
+Bước 7: Tiếp nhận tên miền từ server và trỏ vào source code đang chạy
+
+Chúng ta đi từng bước.
+
+Bước 1: Thuê 1 cái server, để có thể host website.
+Output: Có thông tin về server (IP, username, password, ...)
+
+Khi chúng ta làm 1 cái website thì chúng ta cần 1 cái server để host website đó. Server bản chất nó chẳng khác gì cái máy tính của chúng ta vậy.
+Cũng là 1 cái máy tình, có CPU, RAM, disk, ... Máy chúng ta lưu trữ, chạy được cái source code thì cái server cũng vậy.
+Nhưng có 1 số lý do mà chúng ta sẽ không sử dụng cái máy tính của chúng ta để deploy website, ví dụ như:
+- Không thể chạy 24/24 (khi mà máy mình tắt thì web sẽ tèo)
+- Không thể scale được (khi mà traffic tăng lên thì máy mình sẽ oẳng)
+- Tốc độ sẽ chậm vì sử dụng mạng cá nhân
+
+Vậy thì làm sao chúng ta có thể thuê 1 cái server? Thì có rất bên có thể thuê, trong nước, nước ngoài có hết.
+Cá nhân mình ở trong nước trước hay dùng thằng iNet, nước ngoài thì có aws gần đây mình hay dùng 1 thằng tên là contabo
+
+Server trong nước thì dễ thanh toán (dùng được ngân hàng việt), nhưng cảm giác không ngon lắm, dễ tèo
+Như thằng AWS thì quá nổi tiếng rồi, nhưng để host website cá nhân, web vui vui thì có thể sẽ chat, tất nhiên nó cũng có những gói giá rẻ, nhưng cảm giác mấy cái đó chỉ đủ để học.
+Có thể thuê con lightsail ở AWS thì đẹp giá cỡ 10$/tháng, mà nếu deploy nhiều web thì cũng chỉ phù hợp với web vui vui, còn web business thì khó.
+Gần đây mình hay dùng 1 thằng tên là contabo, thằng này cực rẻ ví dụ thuê 1 cái server 6 core, 12gb ram, 200gb disk, ... chỉ cỡ 10$/tháng, mà cấu hình này phải cài được cả chục con web chơi chơi, cài web thương mại cũng không vấn đề.
+
+
+Bước 2: Chui vào trong cái server đó
+Ouput: Vào trong server, thao tác gì đó (ví dụ như là update, install software, ...)
+

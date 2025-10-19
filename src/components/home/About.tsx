@@ -93,7 +93,7 @@ export default function About() {
         />
       </div>
 
-      <div className="container mx-auto p-8 flex justify-center relative z-10">
+      <div className="container mx-auto p-8 flex justify-center relative z-10 -mt-24">
         <div className="w-full max-w-sm xl:max-w-2xl flex flex-col md:flex-row md:items-end relative">
           {/* Mobile Layout */}
           <motion.div
