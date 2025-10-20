@@ -1,7 +1,13 @@
 import Image from "next/image";
+import { MapPin, Phone, QrCode } from "lucide-react";
+import { useState } from "react";
 import CircularText from "../CircularText";
+import QRModal from "./QRModal";
 
 export default function Hero() {
+  const [isBrideQRModalOpen, setIsBrideQRModalOpen] = useState(false);
+  const [isGroomQRModalOpen, setIsGroomQRModalOpen] = useState(false);
+
   return (
     <section id="hero" className="py-40 font-allura">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 items-center relative">
@@ -99,6 +105,100 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
+      {/* THÔNG TIN NHANH */}
+      <div className="pt-16">
+        <div className="container mx-auto px-4 md:px-8">
+          <div className="text-center mb-8">
+            <h3 className="text-3xl font-merriweather font-bold text-gray-800">
+              THÔNG TIN NHANH
+            </h3>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
+            {/* Cô dâu */}
+            <div className="text-center bg-gray-50 rounded-4xl p-4 md:p-8">
+              <div className="text-2xl font-merriweather mb-4">
+                CÔ DÂU
+              </div>
+              <div className="grid grid-cols-3 gap-4">
+                <a 
+                  href="tel:0396842631"
+                  className="flex font-merriweather items-center justify-center cursor-pointer transition-all duration-300 px-4 py-3 rounded-3xl font-bold flex-col gap-2 text-yellow-800/60 hover:text-yellow-800/80 bg-yellow-800/5"
+                >
+                  <Phone className="w-5 h-5" />
+                  <span className="text-sm truncate">0396 842 631</span>
+                </a>
+
+                <a 
+                  href="https://maps.app.goo.gl/23u6DTQAnZ3CG6xn6?g_st=ipc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex font-merriweather items-center justify-center cursor-pointer transition-all duration-300 px-4 py-3 rounded-3xl font-bold flex-col gap-2 text-yellow-800/60 hover:text-yellow-800/80 bg-yellow-800/5"
+                >
+                  <MapPin className="w-5 h-5" />
+                  <span className="text-sm truncate">LOCATION</span>
+                </a>
+
+                <button
+                  onClick={() => setIsBrideQRModalOpen(true)}
+                  className="flex font-merriweather items-center justify-center cursor-pointer transition-all duration-300 px-4 py-3 rounded-3xl font-bold flex-col gap-2 text-yellow-800/60 hover:text-yellow-800/80 bg-yellow-800/5"
+                >
+                  <QrCode className="w-5 h-5" />
+                  <span className="text-sm truncate">QR CODE</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Chú rể */}
+            <div className="text-center bg-gray-50 rounded-4xl p-4 md:p-8">
+              <div className="text-2xl font-merriweather mb-4">
+                CHÚ RỂ
+              </div>
+              <div className="grid grid-cols-3 gap-4">
+                <a 
+                  href="tel:0961741678"
+                  className="flex font-merriweather items-center justify-center space-x-2 cursor-pointer transition-all duration-300 px-4 py-3 rounded-3xl font-bold flex-col gap-2 text-yellow-800/60 hover:text-yellow-800/80 bg-yellow-800/5"
+                >
+                  <Phone className="w-5 h-5" />
+                  <span className="text-sm truncate">0961 741 678</span>
+                </a>
+
+                <a 
+                  href="https://maps.app.goo.gl/bC6piUzynDB775d3A"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex font-merriweather items-center justify-center space-x-2 cursor-pointer transition-all duration-300 px-4 py-3 rounded-3xl font-bold flex-col gap-2 text-yellow-800/60 hover:text-yellow-800/80 bg-yellow-800/5"
+                >
+                  <MapPin className="w-5 h-5" />
+                  <span className="text-sm truncate">LOCATION</span>
+                </a>
+
+                <button
+                  onClick={() => setIsGroomQRModalOpen(true)}
+                  className="flex font-merriweather items-center justify-center space-x-2 cursor-pointer transition-all duration-300 px-4 py-3 rounded-3xl font-bold flex-col gap-2 text-yellow-800/60 hover:text-yellow-800/80 bg-yellow-800/5"
+                >
+                  <QrCode className="w-5 h-5" />
+                  <span className="text-sm truncate">QR CODE</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* QR Modals */}
+      <QRModal
+        isOpen={isBrideQRModalOpen}
+        onClose={() => setIsBrideQRModalOpen(false)}
+        qrImage="/wedding/bride-qr.jpg"
+      />
+      
+      <QRModal
+        isOpen={isGroomQRModalOpen}
+        onClose={() => setIsGroomQRModalOpen(false)}
+        qrImage="/wedding/groom-qr.jpg"
+      />
     </section>
   );
 }

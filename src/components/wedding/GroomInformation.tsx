@@ -61,7 +61,7 @@ export default function GroomInformation() {
           <div className="flex items-center flex-wrap justify-center gap-4">
             <a 
               href="tel:0961741678"
-              className="flex font-merriweather items-center justify-center space-x-2 cursor-pointer bg-yellow-800/60 hover:bg-yellow-800/80 transition-all duration-300 px-6 py-3 rounded-full font-bold text-white"
+              className="flex font-merriweather items-center justify-center cursor-pointer  transition-all duration-300 px-6 py-3 rounded-3xl font-bold flex-col gap-3 text-yellow-800/60 hover:text-yellow-800/80 bg-yellow-800/5"
             >
               <Phone className="w-6 h-6" />
               <span>0961 741 678</span>
@@ -71,15 +71,15 @@ export default function GroomInformation() {
               href="https://maps.app.goo.gl/bC6piUzynDB775d3A"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex font-merriweather items-center justify-center space-x-2 cursor-pointer bg-yellow-800/60 hover:bg-yellow-800/80 transition-all duration-300 px-6 py-3 rounded-full font-bold text-white"
+              className="flex font-merriweather items-center justify-center cursor-pointer  transition-all duration-300 px-6 py-3 rounded-3xl font-bold flex-col gap-3 text-yellow-800/60 hover:text-yellow-800/80 bg-yellow-800/5"
             >
               <MapPin className="w-6 h-6" />
-              <span>GOOGLE MAPS</span>
+              <span>LOCATION</span>
             </a>
 
             <button
               onClick={() => setIsQRModalOpen(true)}
-              className="flex font-merriweather items-center justify-center space-x-2 cursor-pointer bg-yellow-800/60 hover:bg-yellow-800/80 transition-all duration-300 px-6 py-3 rounded-full font-bold text-white"
+              className="flex font-merriweather items-center justify-center cursor-pointer  transition-all duration-300 px-6 py-3 rounded-3xl font-bold flex-col gap-3 text-yellow-800/60 hover:text-yellow-800/80 bg-yellow-800/5"
             >
               <QrCode className="w-6 h-6" />
               <span>QR CODE</span>
