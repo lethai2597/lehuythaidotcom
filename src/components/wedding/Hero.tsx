@@ -61,12 +61,11 @@ export default function Hero() {
           <div className="relative">
             <div className="max-w-xs md:max-w-auto aspect-square md:aspect-[1/2] rounded-full overflow-hidden">
               <Image
-                src="/wedding/6.jpg"
+                src="/wedding/7.jpg"
                 alt="Wedding Hero"
                 width={1168}
                 height={1752}
                 className="w-full h-full object-cover"
-                style={{ objectPosition: 'left bottom' }}
               />
             </div>
 
