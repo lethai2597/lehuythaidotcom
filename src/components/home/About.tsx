@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import LightRays from "../LightRays";
 
@@ -93,7 +94,7 @@ export default function About() {
         />
       </div>
 
-      <div className="container mx-auto p-8 flex justify-center relative z-10 -mt-24">
+      <div className="container mx-auto p-8 pb-0 flex justify-center relative z-10 -mt-24">
         <div className="w-full max-w-sm xl:max-w-2xl flex flex-col md:flex-row md:items-end relative">
           {/* Mobile Layout */}
           <motion.div
@@ -200,7 +201,7 @@ export default function About() {
         </div>
       </div>
 
-      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-b from-transparent to-zinc-950 z-10"></div>
+      <div className="absolute bottom-0 left-0 w-full h-12 bg-gradient-to-b from-transparent to-zinc-950 z-10"></div>
     </section>
   );
 }

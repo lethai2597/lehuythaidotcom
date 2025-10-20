@@ -9,6 +9,8 @@ import Statistics from "@/components/home/Statistics";
 import Skills from "@/components/home/Skills";
 import Contact from "@/components/home/Contact";
 import Footer from "@/components/home/Footer";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function Page() {
   return (
@@ -17,6 +19,7 @@ export default function Page() {
       <section id="home">
         <About />
       </section>
+
       <section id="services">
         <Services />
       </section>
