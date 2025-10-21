@@ -9,7 +9,14 @@ export default function WeddingLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div style={{ colorScheme: 'light' }}>
+    <div 
+      data-wedding-page
+      style={{ 
+        colorScheme: 'light',
+        backgroundColor: 'white',
+        color: 'black'
+      }}
+    >
       {/* JSON-LD Schema for Event */}
       <script
         type="application/ld+json"

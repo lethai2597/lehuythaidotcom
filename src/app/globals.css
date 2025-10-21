@@ -160,4 +160,14 @@ body {
   .font-merriweather {
     font-family: 'Merriweather', serif;
   }
+
+  /* Force light mode for wedding page */
+  [data-wedding-page] {
+    color-scheme: light !important;
+    background-color: white !important;
+  }
+  
+  [data-wedding-page] * {
+    color-scheme: light !important;
+  }
 }
