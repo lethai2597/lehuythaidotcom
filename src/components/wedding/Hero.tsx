@@ -20,13 +20,13 @@ export default function Hero() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="text-7xl md:text-9xl gap-4 grid text-center md:text-left">
-          <div className="text-transparent bg-clip-text bg-gradient-to-br from-black to-gray-200">
+          <div className="">
             Save
           </div>
-          <div className="text-transparent bg-clip-text bg-gradient-to-br from-black to-gray-200">
+          <div className="">
             The
           </div>
-          <div className="text-transparent bg-clip-text bg-gradient-to-br from-black to-gray-200">
+          <div className="">
             Dates
           </div>
 

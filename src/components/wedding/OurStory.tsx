@@ -19,7 +19,7 @@ export default function OurStory() {
           animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
         >
-          <h2 className="text-7xl xl:text-9xl font-medium font-allura leading-tight text-transparent bg-clip-text bg-gradient-to-br from-black to-gray-400">
+          <h2 className="text-7xl xl:text-9xl font-medium font-allura leading-tight">
             The Story
           </h2>
         </motion.div>

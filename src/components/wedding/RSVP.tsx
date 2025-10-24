@@ -83,7 +83,7 @@ export default function RSVP() {
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
         <div className="text-center mb-12">
-          <h2 className="text-9xl font-medium font-allura mb-4 leading-tight text-transparent bg-clip-text bg-gradient-to-br from-black to-gray-400">
+          <h2 className="text-9xl font-medium font-allura mb-4 leading-tight">
             RSVP
           </h2>
           <p className="text-gray-500 font-merriweather max-w-xl mx-auto">

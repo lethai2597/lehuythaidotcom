@@ -43,7 +43,7 @@ export default function GroomInformation() {
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
         >
           <div className="text-2xl font-merriweather mb-2">CHÚ RỂ</div>
-          <h2 className="text-7xl xl:text-9xl mb-4 font-medium font-allura leading-tight text-transparent bg-clip-text bg-gradient-to-br from-black to-gray-400">
+          <h2 className="text-7xl xl:text-9xl mb-4 font-medium font-allura leading-tight">
             Huy Thái
           </h2>
 
