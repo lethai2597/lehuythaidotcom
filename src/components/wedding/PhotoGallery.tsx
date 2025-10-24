@@ -2,9 +2,11 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, Thumbs } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 // Import Swiper styles
 import "swiper/css";
@@ -12,18 +14,31 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/thumbs";
 
-const PHOTOS = new Array(41)
-  .fill(0)
-  .map((_, index) => `/wedding/${index + 1}.jpg`)
-  .sort(() => Math.random() - 0.5);
+const PHOTOS = [
+  "/wedding/1.jpg", "/wedding/2.jpg", "/wedding/3.jpg", "/wedding/4.jpg", "/wedding/5.jpg",
+  "/wedding/6.jpg", "/wedding/7.jpg", "/wedding/8.jpg", "/wedding/9.jpg", "/wedding/10.jpg",
+  "/wedding/11.jpg", "/wedding/12.jpg", "/wedding/13.jpg", "/wedding/14.jpg", "/wedding/15.jpg",
+  "/wedding/16.jpg", "/wedding/17.jpg", "/wedding/18.jpg", "/wedding/19.jpg", "/wedding/20.jpg",
+  "/wedding/21.jpg", "/wedding/22.jpg", "/wedding/23.jpg", "/wedding/24.jpg", "/wedding/25.jpg",
+  "/wedding/26.jpg", "/wedding/27.jpg", "/wedding/28.jpg", "/wedding/29.jpg", "/wedding/30.jpg",
+  "/wedding/31.jpg", "/wedding/32.jpg", "/wedding/33.jpg", "/wedding/34.jpg", "/wedding/35.jpg",
+  "/wedding/36.jpg", "/wedding/37.jpg", "/wedding/38.jpg", "/wedding/39.jpg", "/wedding/40.jpg",
+  "/wedding/41.jpg"
+];
 
 export default function PhotoGallery() {
+  const { ref, isVisible } = useScrollAnimation();
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
   const [, setMainSwiper] = useState<SwiperType | null>(null);
 
   return (
-    <section id="photo-gallery" className="py-40">
-      <div className="container mx-auto px-8">
+    <section ref={ref} id="photo-gallery" className="py-40">
+      <motion.div 
+        className="container mx-auto px-8"
+        initial={{ opacity: 0, y: 50 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="text-center mb-8">
           <h2 className="text-7xl xl:text-9xl font-medium font-allura mb-2 leading-tight text-transparent bg-clip-text bg-gradient-to-br from-black to-gray-400">
             Khoảnh Khắc
@@ -137,9 +152,8 @@ export default function PhotoGallery() {
             ))}
           </Swiper>
         </div>
-      </div>
 
-      <style jsx global>{`
+        <style jsx global>{`
         .main-swiper .swiper-pagination {
           bottom: 20px;
           left: 50%;
@@ -193,6 +207,7 @@ export default function PhotoGallery() {
           cursor: not-allowed;
         }
       `}</style>
+      </motion.div>
     </section>
   );
 }

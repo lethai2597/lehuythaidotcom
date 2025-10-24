@@ -1,11 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Send } from "lucide-react";
 import Image from "next/image";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 interface RSVPFormData {
   name: string;
@@ -15,6 +17,7 @@ interface RSVPFormData {
 }
 
 export default function RSVP() {
+  const { ref, isVisible } = useScrollAnimation();
   const [formData, setFormData] = useState<RSVPFormData>({
     name: "",
     side: "",
@@ -72,8 +75,13 @@ export default function RSVP() {
   };
 
   return (
-    <section id="rsvp" className="py-40 bg-yellow-700/5">
-      <div className="container mx-auto">
+    <section ref={ref} id="rsvp" className="py-40 bg-yellow-700/5">
+      <motion.div 
+        className="container mx-auto"
+        initial={{ opacity: 0, y: 50 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="text-center mb-12">
           <h2 className="text-9xl font-medium font-allura mb-4 leading-tight text-transparent bg-clip-text bg-gradient-to-br from-black to-gray-400">
             RSVP
@@ -327,7 +335,7 @@ export default function RSVP() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

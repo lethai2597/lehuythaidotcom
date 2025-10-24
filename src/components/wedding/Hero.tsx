@@ -1,16 +1,24 @@
 import Image from "next/image";
 import { MapPin, Phone, QrCode } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import CircularText from "../CircularText";
 import QRModal from "./QRModal";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function Hero() {
   const [isBrideQRModalOpen, setIsBrideQRModalOpen] = useState(false);
   const [isGroomQRModalOpen, setIsGroomQRModalOpen] = useState(false);
+  const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="hero" className="py-40 font-allura">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 items-center relative">
+    <section ref={ref} id="hero" className="py-40 font-allura">
+      <motion.div 
+        className="container mx-auto grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-16 items-center relative"
+        initial={{ opacity: 0, y: 50 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
         <div className="text-7xl md:text-9xl gap-4 grid text-center md:text-left">
           <div className="text-transparent bg-clip-text bg-gradient-to-br from-black to-gray-200">
             Save
@@ -103,17 +111,21 @@ export default function Hero() {
             <div className="text-2xl font-merriweather">ĐẾN VÔ TẬN</div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* THÔNG TIN NHANH */}
-      <div className="pt-16">
-        <div className="container mx-auto px-4 md:px-8">
+      <motion.div 
+        className="pt-16"
+        initial={{ opacity: 0, y: 30 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+        transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+        >
+          <div className="container mx-auto px-4 md:px-8">
           <div className="text-center mb-8">
             <h3 className="text-3xl font-merriweather font-bold text-gray-800">
               THÔNG TIN NHANH
             </h3>
           </div>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {/* Cô dâu */}
             <div className="text-center bg-gray-50 rounded-4xl p-4 md:p-8">
@@ -184,7 +196,7 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* QR Modals */}
       <QRModal

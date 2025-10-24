@@ -3,15 +3,28 @@
 import { MapPin, Phone, QrCode } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { motion } from "framer-motion";
 import QRModal from "./QRModal";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function GroomInformation() {
   const [isQRModalOpen, setIsQRModalOpen] = useState(false);
+  const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section className="py-40">
-      <div className="container mx-auto flex flex-col md:flex-row p-8 gap-8 md:gap-16 items-center">
-        <div className="relative md:w-2/5 w-full order-2 md:order-1">
+    <section ref={ref} className="py-40">
+      <motion.div 
+        className="container mx-auto flex flex-col md:flex-row p-8 gap-8 md:gap-16 items-center"
+        initial={{ opacity: 0, y: 50 }}
+        animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <motion.div 
+          className="relative md:w-2/5 w-full order-2 md:order-1"
+          initial={{ opacity: 0, x: 50 }}
+          animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+        >
           <div className="md:aspect-[5/8] relative aspect-square max-w-xs md:max-w-full mx-auto md:mx-0 rounded-full overflow-hidden">
             <Image
               src="/wedding/32.jpg"
@@ -22,8 +35,13 @@ export default function GroomInformation() {
             />
             <div className="absolute inset-0 border-2 border-white/30 m-4 rounded-full"></div>
           </div>
-        </div>
-        <div className="flex-1 text-center">
+        </motion.div>
+        <motion.div 
+          className="flex-1 text-center"
+          initial={{ opacity: 0, x: -50 }}
+          animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+          transition={{ duration: 0.8, ease: "easeOut", delay: 0.4 }}
+        >
           <div className="text-2xl font-merriweather mb-2">CHÚ RỂ</div>
           <h2 className="text-7xl xl:text-9xl mb-4 font-medium font-allura leading-tight text-transparent bg-clip-text bg-gradient-to-br from-black to-gray-400">
             Huy Thái
@@ -58,7 +76,12 @@ export default function GroomInformation() {
             </div>
           </div>
 
-          <div className="flex items-center flex-wrap justify-center gap-4">
+          <motion.div 
+            className="flex items-center flex-wrap justify-center gap-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.6 }}
+          >
             <a 
               href="tel:0961741678"
               className="flex font-merriweather items-center justify-center cursor-pointer  transition-all duration-300 px-6 py-3 rounded-3xl font-bold flex-col gap-3 text-yellow-800/60 hover:text-yellow-800/80 bg-yellow-800/5"
@@ -84,9 +107,9 @@ export default function GroomInformation() {
               <QrCode className="w-6 h-6" />
               <span>QR CODE</span>
             </button>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
 
       {/* QR Modal */}
       <QRModal
