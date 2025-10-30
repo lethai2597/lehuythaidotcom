@@ -7,7 +7,7 @@ import Summary from "@/components/home/Summary";
 import Services from "@/components/home/Services";
 import Statistics from "@/components/home/Statistics";
 import Skills from "@/components/home/Skills";
-import Project from "@/components/home/Project";
+import Projects from "@/components/home/Projects";
 import Contact from "@/components/home/Contact";
 import Footer from "@/components/home/Footer";
 
@@ -20,7 +20,7 @@ export default function Page() {
       <Services />
       <Statistics />
       <Skills />
-      <Project />
+      <Projects />
       <Workflow />
       <Contact />
       <Summary />

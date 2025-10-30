@@ -104,7 +104,7 @@ const imageVariants = {
   },
 };
 
-export default function Project() {
+export default function Projects() {
   return (
     <section id="projects" className="py-20 md:py-40 relative overflow-hidden">
       {/* Background decorative elements */}

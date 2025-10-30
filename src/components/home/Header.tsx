@@ -26,9 +26,10 @@ export default function Header() {
       "home",
       "services",
       "skills",
+      "projects",
       "workflow",
-      "summary",
       "contact",
+      "summary",
     ];
 
     const observers = sections.map((sectionId) => {
@@ -117,6 +118,19 @@ export default function Header() {
                 Skills
               </button>
               <button
+                onClick={() => scrollToSection("projects")}
+                className="px-4 py-2 flex items-center cursor-pointer gap-2 transition-all duration-500 hover:-translate-y-0.5 hover:text-white"
+              >
+                <div
+                  className={`rounded-full transition-all duration-300 ${
+                    activeSection === "projects"
+                      ? "w-2 h-2 bg-zinc-200"
+                      : "w-0 h-0 bg-transparent"
+                  }`}
+                ></div>
+                Projects
+              </button>
+              <button
                 onClick={() => scrollToSection("workflow")}
                 className="px-4 py-2 flex items-center cursor-pointer gap-2 transition-all duration-500 hover:-translate-y-0.5 hover:text-white"
               >
@@ -176,16 +190,19 @@ export default function Header() {
               className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
                 isMobileMenuOpen ? "rotate-45 translate-y-2" : ""
               }`}
+              aria-label="Home"
             ></span>
             <span
               className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
                 isMobileMenuOpen ? "opacity-0" : ""
               }`}
+              aria-label="Services"
             ></span>
             <span
               className={`block w-6 h-0.5 bg-white transition-all duration-300 ${
                 isMobileMenuOpen ? "-rotate-45 -translate-y-2" : ""
               }`}
+              aria-label="Projects"
             ></span>
           </button>
         </div>
@@ -253,6 +270,21 @@ export default function Header() {
                 }`}
               ></div>
               <span className="text-lg">Skills</span>
+            </button>
+            <button
+              onClick={() => handleMenuClick("projects")}
+              className={`px-4 py-3 flex items-center gap-3 transition-all duration-300 hover:bg-zinc-800/50 rounded-lg ${
+                activeSection === "projects" ? "bg-zinc-800/50" : ""
+              }`}
+            >
+              <div
+                className={`rounded-full transition-all duration-300 ${
+                  activeSection === "projects"
+                    ? "w-2 h-2 bg-indigo-400"
+                    : "w-2 h-2 transparent"
+                }`}
+              ></div>
+              <span className="text-lg">Projects</span>
             </button>
             <button
               onClick={() => handleMenuClick("workflow")}
