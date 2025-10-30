@@ -150,46 +150,40 @@ export default function Projects() {
 
         {/* Projects List */}
         <motion.div
-          className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-12"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
         >
           {PROJECTS.map((project, index) => (
-            <motion.div
+            <motion.a
+              href={`https://${project.name}`}
+              target="_blank"
+              rel="noopener noreferrer"
               key={project.name}
-              className="-mb-4 group"
+              className="group rounded-4xl bg-zinc-900 p-4 md:p-8 block cursor-pointer hover:-translate-y-2 transition-all duration-300 group"
               variants={itemVariants}
             >
               {/* Image */}
               <motion.div className="relative" variants={imageVariants}>
-                <div className="aspect-video w-full rounded-3xl 2xl:rounded-4xl bg-zinc-900 ring-1 ring-white/10 overflow-hidden">
+                <div className="aspect-video w-full rounded-3xl bg-zinc-900 ring-1 ring-white/10 overflow-hidden mb-8">
                   <Image
                     src={`/imgs/${project.image}.png`}
                     alt={project.name}
                     width={1600}
                     height={900}
-                    className="w-full h-full object-cover opacity-90 brightness-95 contrast-105 saturate-110 transition-all duration-300 group-hover:opacity-100 group-hover:brightness-100 group-hover:contrast-100 group-hover:saturate-100"
+                    className="w-full group-hover:scale-110 h-full object-cover opacity-90 brightness-95 contrast-105 saturate-110 transition-all duration-300 group-hover:opacity-100 group-hover:brightness-100 group-hover:contrast-100 group-hover:saturate-100"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-transparent via-zinc-950/20 to-zinc-950/40 opacity-100 group-hover:opacity-0 transition-opacity duration-300 pointer-events-none" />
                 </div>
               </motion.div>
 
               {/* Content */}
-              <motion.div
-                className="space-y-4 bg-zinc-800 group-hover:rotate-x-64 group-hover:rotate-y-64 rounded-4xl p-8 2xl:mx-16 -translate-y-12 group-hover:2xl:-translate-y-4 transition-all duration-300"
-                variants={itemVariants}
-              >
-                <a
-                  href={`https://${project.name}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xl md:text-2xl font-bold text-white block"
-                >
+              <motion.div className="space-y-4" variants={itemVariants}>
+                <div className="text-xl font-bold text-white block">
                   {project.name}
-                </a>
-                <div className="flex flex-wrap items-center gap-3">
+                </div>
+                <div className="flex flex-wrap items-center gap-3 text-sm">
                   <span className="">{project.role}</span>
                   <span className="text-zinc-400">|</span>
                   <span className="">Team: {project.teamSize} members</span>
@@ -207,7 +201,7 @@ export default function Projects() {
                       return (
                         <div
                           key={stackIndex}
-                          className="rounded-full h-12 w-12 first:ml-0 -ml-4 overflow-hidden bg-zinc-800 p-2 border-2 border-zinc-700"
+                          className="rounded-full h-10 w-10 first:ml-0 -ml-4 overflow-hidden bg-zinc-800 p-2 border-2 border-zinc-700"
                         >
                           {stackImage ? (
                             <Image
@@ -223,10 +217,10 @@ export default function Projects() {
                     })}
                 </div>
               </motion.div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
-        
+
         <motion.p
           className="text-center text-zinc-400 mt-12"
           initial="hidden"
