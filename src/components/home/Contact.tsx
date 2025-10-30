@@ -125,7 +125,7 @@ export default function Contact() {
   };
 
   return (
-    <section className="py-20 md:pt-40 md:pb-80 relative overflow-hidden">
+    <section id="contact" className="py-20 md:pt-40 md:pb-80 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl" />

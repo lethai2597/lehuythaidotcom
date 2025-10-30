@@ -44,7 +44,7 @@ const cardVariants = {
 
 export default function Services() {
   return (
-    <section className="py-20 md:py-40 relative overflow-hidden">
+    <section id="services" className="py-20 md:py-40 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Gradient Orbs */}
@@ -83,13 +83,13 @@ export default function Services() {
         </motion.div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 text-white"
+          className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 text-white hover:[&>.service-card:not(:hover)]:blur-xs hover:[&>.service-card:not(:hover)]:opacity-50"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           variants={containerVariants}
         >
-          <motion.div variants={cardVariants}>
+          <motion.div variants={cardVariants} className="service-card transition-all duration-300 cursor-pointer">
             <SpotlightCard
               className="w-full group !p-0 !rounded-4xl overflow-hidden hover:-translate-y-4 transition-all duration-300"
               spotlightColor="rgba(251, 191, 36, 0.15)"
@@ -111,13 +111,13 @@ export default function Services() {
                   alt="Web Development"
                   width={1000}
                   height={500}
-                  className="w-full max-w-full mx-auto"
+                  className="w-full max-w-full mx-auto transition-all duration-300 brightness-80 group-hover:brightness-100 group-hover:saturate-100 group-hover:opacity-100"
                 />
               </div>
             </SpotlightCard>
           </motion.div>
 
-          <motion.div variants={cardVariants}>
+          <motion.div variants={cardVariants} className="service-card transition-all duration-300 cursor-pointer">
             <SpotlightCard
               className="w-full group !p-0 !rounded-4xl overflow-hidden hover:-translate-y-4 transition-all duration-300"
               spotlightColor="rgba(52, 211, 153, 0.15)"
@@ -139,13 +139,13 @@ export default function Services() {
                   alt="Web Development"
                   width={1000}
                   height={500}
-                  className="w-full max-w-full mx-auto"
+                  className="w-full max-w-full mx-auto transition-all duration-300 brightness-80 group-hover:brightness-100 group-hover:saturate-100 group-hover:opacity-100"
                 />
               </div>
             </SpotlightCard>
           </motion.div>
 
-          <motion.div variants={cardVariants}>
+          <motion.div variants={cardVariants} className="service-card transition-all duration-300 cursor-pointer">
             <SpotlightCard
               className="w-full group !p-0 !rounded-4xl overflow-hidden hover:-translate-y-4 transition-all duration-300"
               spotlightColor="rgba(96, 165, 250, 0.15)"
@@ -167,7 +167,7 @@ export default function Services() {
                   alt="Web Development"
                   width={1000}
                   height={500}
-                  className="w-full max-w-full mx-auto"
+                  className="w-full max-w-full mx-auto transition-all duration-300 brightness-80 group-hover:brightness-100 group-hover:saturate-100 group-hover:opacity-100"
                 />
               </div>
             </SpotlightCard>

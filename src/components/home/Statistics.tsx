@@ -74,7 +74,7 @@ const statsData = [
 
 export default function Statistics() {
   return (
-    <section className="py-20 md:py-40 relative overflow-hidden">
+    <section id="statistics" className="py-20 md:py-40 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
         {/* Gradient Orbs */}

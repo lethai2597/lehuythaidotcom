@@ -67,7 +67,7 @@ const cardsVariants = {
 
 export default function Workflow() {
   return (
-    <section className="py-40 px-4">
+    <section id="workflow" className="py-40 px-4">
       <div className="container mx-auto grid grid-cols-1 xl:grid-cols-2 rounded-4xl bg-zinc-900 relative overflow-hidden">
         {/* Decorative Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">

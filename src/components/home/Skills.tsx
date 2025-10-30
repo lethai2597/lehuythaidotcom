@@ -75,7 +75,7 @@ export default function Skills() {
   }, []);
 
   return (
-    <section className="py-20 md:py-40 relative overflow-hidden">
+    <section id="skills" className="py-20 md:py-40 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Gradient Orbs */}
