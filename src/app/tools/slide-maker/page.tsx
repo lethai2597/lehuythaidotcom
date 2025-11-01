@@ -278,12 +278,12 @@ function SlideDisplay({
   };
 
   return (
-    <div className="h-screen flex items-center justify-center p-8 relative overflow-hidden text-2xl font-semibold">
+    <div className="fixed inset-0 h-screen flex items-center justify-center p-8 overflow-hidden text-2xl font-semibold bg-zinc-950 z-50">
       <div className="max-w-7xl w-full relative z-10">
         {/* Sticky header outside of scrollable container */}
         {revealState.visibleLines > 1 && (
           <div className="absolute top-0 w-full z-30 mb-0">
-            <div className="h-32 bg-gradient-to-b from-zinc-900 to-transparent pointer-events-none" />
+            <div className="h-32 bg-gradient-to-b from-zinc-950 to-transparent pointer-events-none" />
           </div>
         )}
 
@@ -303,7 +303,7 @@ function SlideDisplay({
               <>
                 <span className="text-zinc-500">•</span>
                 <span>
-                  Dòng {revealState.visibleLines}/{slide.lines.length}
+                  Line {revealState.visibleLines}/{slide.lines.length}
                 </span>
               </>
             ) : null}
@@ -312,7 +312,7 @@ function SlideDisplay({
               revealState.visibleLines <= slide.lines.length && (
                 <>
                   <span className="text-zinc-500">•</span>{" "}
-                  <span className="text-zinc-500">Esc để thoát</span>
+                  <span className="text-zinc-500">Esc to exit</span>
                 </>
               )}
           </span>
@@ -346,7 +346,7 @@ function TitleDisplay({
   }, [onStart, onExit]);
 
   return (
-    <div className="h-screen flex items-center justify-center p-8 relative overflow-hidden">
+    <div className="fixed inset-0 h-screen flex items-center justify-center p-8 overflow-hidden bg-zinc-950 z-50">
       <div className="max-w-7xl w-full relative z-10 text-center">
         <h1 className="text-8xl text-white font-bold leading-tight mb-8">
           {title}
@@ -356,12 +356,12 @@ function TitleDisplay({
         <div className="flex items-center justify-center space-x-4 text-zinc-300 text-sm">
           <span className="flex items-center gap-2">
             <Play className="w-4 h-4" />
-            Enter để bắt đầu
+            Enter to start
           </span>
 
           <span className="text-zinc-500">•</span>
 
-          <span className="text-zinc-500">Esc để thoát</span>
+          <span className="text-zinc-500">Esc to exit</span>
         </div>
       </div>
     </div>
@@ -424,23 +424,14 @@ export default function MarkdownToSlide() {
 
   return (
     <div className="">
-      {/* Back to home button */}
-      <Link 
-        href="/tools"
-        className="absolute top-6 left-6 z-50 p-3 rounded-full bg-zinc-800/50 hover:bg-zinc-700/50 text-zinc-300 hover:text-white transition-all duration-200 backdrop-blur-sm"
-        title="Về trang chủ"
-      >
-        <Home className="w-5 h-5" />
-      </Link>
-
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">
             Simple Slide Maker
           </h1>
           <p className="text-zinc-300 text-lg max-w-2xl mx-auto">
-            Tạo slide thuyết trình đơn giản
+            Create simple presentation slides
           </p>
         </div>
 
@@ -449,44 +440,44 @@ export default function MarkdownToSlide() {
           <div className="bg-zinc-800 rounded-4xl p-8">
             <div className="pb-8">
               <h2 className="text-xl font-semibold text-zinc-100">
-                Nhập nội dung
+                Enter content
               </h2>
               <p className="text-sm text-zinc-300 mt-1">
-                Tiêu đề hiện trước, các dòng sau line by line
+                Title appears first, then lines appear one by one
               </p>
             </div>
 
             <div className="space-y-6">
               {/* Title Input */}
               <div className="space-y-2">
-                <Label htmlFor="slide-title">Tiêu đề</Label>
+                <Label htmlFor="slide-title">Title</Label>
                 <Input
                   id="slide-title"
                   type="text"
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                  placeholder="Nhập tiêu đề slide..."
+                  placeholder="Enter slide title..."
                   className="bg-zinc-900 border-none focus:ring-pink-500"
                 />
               </div>
 
               {/* Markdown Input */}
               <div className="space-y-2">
-                <Label htmlFor="slide-content">Nội dung</Label>
+                <Label htmlFor="slide-content">Content</Label>
                 <Textarea
                   id="slide-content"
                   value={markdown}
                   onChange={(e) => setMarkdown(e.target.value)}
-                  placeholder={`## Tiêu đề lớn  
-### Tiêu đề nhỏ
+                  placeholder={`## Large Heading  
+### Small Heading
 
-Đoạn văn
+Paragraph
 
-- Mục 1
-- Mục 2
-- Mục 3
+- Item 1
+- Item 2
+- Item 3
 
-![](đường-dẫn-ảnh)`}
+![](image-path)`}
                   className="max-h-[320px] scrollbar-hide bg-zinc-900 border-none focus:ring-pink-500 font-mono text-sm resize-none"
                 />
               </div>
@@ -498,7 +489,7 @@ export default function MarkdownToSlide() {
                   className="inline-flex items-center cursor-pointer bg-white text-zinc-900 hover:bg-zinc-100 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   <Play className="w-4 h-4" />
-                  Bắt đầu Slide
+                  Start Slide
                 </Button>
               </div>
             </div>

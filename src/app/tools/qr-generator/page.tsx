@@ -112,23 +112,14 @@ export default function QRGenerator() {
 
   return (
     <div className="">
-      {/* Back to home button */}
-      <Link
-        href="/tools"
-        className="absolute top-6 left-6 z-50 p-3 rounded-full bg-zinc-800/50 hover:bg-zinc-700/50 text-zinc-300 hover:text-white transition-all duration-200 backdrop-blur-sm"
-        title="Về trang chủ"
-      >
-        <Home className="w-5 h-5" />
-      </Link>
-
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-8">
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">
             QR Code Generator
           </h1>
           <p className="text-zinc-300 text-lg max-w-2xl mx-auto">
-            Tạo mã QR đẹp và tùy chỉnh cho mọi nhu cầu
+            Create beautiful and customizable QR codes for any need
           </p>
         </div>
 
@@ -136,28 +127,28 @@ export default function QRGenerator() {
           {/* Input Section */}
           <div className="bg-zinc-800 rounded-4xl p-8">
             <div className="pb-8">
-              <h2 className="text-xl font-semibold mb-2">Tạo QR Code</h2>
+              <h2 className="text-xl font-semibold mb-2">Create QR Code</h2>
               <p className="text-sm text-zinc-300">
-                Nhập nội dung và tùy chỉnh giao diện
+                Enter content and customize appearance
               </p>
             </div>
 
             <div className="space-y-6">
               {/* Text Input */}
               <div className="space-y-2">
-                <Label htmlFor="qr-content">Nội dung QR Code</Label>
+                <Label htmlFor="qr-content">QR Code Content</Label>
                 <Textarea
                   id="qr-content"
                   value={text}
                   onChange={(e) => setText(e.target.value)}
-                  placeholder="Nhập URL, text, hoặc dữ liệu khác..."
+                  placeholder="Enter URL, text, or other data..."
                   className="min-h-[120px] bg-zinc-900 border-none"
                 />
               </div>
 
               {/* Preset Buttons */}
               <div className="space-y-2">
-                <Label>Mẫu có sẵn</Label>
+                <Label>Presets</Label>
                 <div className="grid grid-cols-2 gap-2">
                   {presetTexts.map((preset) => (
                     <Button
@@ -173,7 +164,7 @@ export default function QRGenerator() {
 
               {/* Size Setting */}
               <div className="space-y-2">
-                <Label>Kích thước: {size}px</Label>
+                <Label>Size: {size}px</Label>
                 <Slider
                   value={[size]}
                   onValueChange={(value) => setSize(value[0])}
@@ -187,7 +178,7 @@ export default function QRGenerator() {
               {/* Colors */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label>Màu QR</Label>
+                  <Label>QR Color</Label>
                   <div className="flex items-center gap-3">
                     <div className="relative w-10 h-10">
                       <div
@@ -214,7 +205,7 @@ export default function QRGenerator() {
                 </div>
 
                 <div className="space-y-2">
-                  <Label>Màu nền</Label>
+                  <Label>Background Color</Label>
                   <div className="flex items-center gap-3">
                     <div className="relative w-10 h-10">
                       <div
@@ -248,7 +239,7 @@ export default function QRGenerator() {
               >
                 <div className="flex items-center gap-2">
                   <Settings className="w-4 h-4" />
-                  <span className="font-medium">Tùy chỉnh nâng cao</span>
+                  <span className="font-medium">Advanced Settings</span>
                 </div>
                 {showAdvanced ? (
                   <ChevronUp className="w-4 h-4" />
@@ -262,7 +253,7 @@ export default function QRGenerator() {
                 <div className="space-y-4">
                   {/* Error Level */}
                   <div className="space-y-2">
-                    <Label>Mức độ sửa lỗi</Label>
+                    <Label>Error Correction Level</Label>
                     <Select
                       value={errorLevel}
                       onValueChange={(value: "L" | "M" | "Q" | "H") =>
@@ -274,16 +265,16 @@ export default function QRGenerator() {
                       </SelectTrigger>
                       <SelectContent className="bg-zinc-700 border-zinc-700">
                         <SelectItem value="L">
-                          Thấp (L) - QR nhỏ nhất
+                          Low (L) - Smallest QR
                         </SelectItem>
                         <SelectItem value="M">
-                          Trung bình (M) - Cân bằng tốt
+                          Medium (M) - Good balance
                         </SelectItem>
                         <SelectItem value="Q">
-                          Cao (Q) - Chịu che khuất 25%
+                          High (Q) - 25% damage resistant
                         </SelectItem>
                         <SelectItem value="H">
-                          Rất cao (H) - Chịu che khuất 30%
+                          Very High (H) - 30% damage resistant
                         </SelectItem>
                       </SelectContent>
                     </Select>
@@ -291,7 +282,7 @@ export default function QRGenerator() {
 
                   {/* Margin */}
                   <div className="space-y-2">
-                    <Label>Khoảng cách: {margin}px</Label>
+                    <Label>Margin: {margin}px</Label>
                     <Slider
                       value={[margin]}
                       onValueChange={(value) => setMargin(value[0])}
@@ -301,8 +292,8 @@ export default function QRGenerator() {
                       className="w-full [&_[data-slot=slider-track]]:bg-zinc-700 [&_[data-slot=slider-range]]:bg-white [&_[data-slot=slider-thumb]]:bg-white [&_[data-slot=slider-thumb]]:border-white [&_[data-slot=slider-thumb]]:hover:bg-pink-50"
                     />
                     <div className="flex justify-between text-xs text-zinc-400">
-                      <span>0px - Sát viền</span>
-                      <span>10px - Rộng rãi</span>
+                      <span>0px - No margin</span>
+                      <span>10px - Spacious</span>
                     </div>
                   </div>
                 </div>
@@ -313,8 +304,8 @@ export default function QRGenerator() {
           {/* Output Section */}
           <div className="bg-zinc-800 rounded-4xl p-8 flex flex-col">
             <div className="pb-8">
-              <h2 className="text-xl font-semibold text-white mb-2">Kết quả</h2>
-              <p className="text-sm">Xem trước và tải xuống QR Code</p>
+              <h2 className="text-xl font-semibold text-white mb-2">Result</h2>
+              <p className="text-sm">Preview and download QR Code</p>
             </div>
 
             <div className="space-y-6 flex-1 flex flex-col">
@@ -325,7 +316,7 @@ export default function QRGenerator() {
                     <div className="w-64 h-64 bg-zinc-700 rounded-2xl flex items-center justify-center">
                       <div className="text-center text-zinc-400">
                         <div className="animate-spin w-8 h-8 border-2 border-zinc-400 border-t-transparent rounded-full mx-auto mb-4"></div>
-                        <p className="text-sm">Đang tạo QR Code...</p>
+                        <p className="text-sm">Generating QR Code...</p>
                       </div>
                     </div>
                   ) : qrCodeUrl ? (
@@ -340,7 +331,7 @@ export default function QRGenerator() {
                     <div className="w-64 h-64 bg-zinc-700 rounded-2xl flex items-center justify-center">
                       <div className="text-center text-zinc-400">
                         <QrCode className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                        <p className="text-sm">Nhập nội dung để tạo QR Code</p>
+                        <p className="text-sm">Enter content to<br />generate QR Code</p>
                       </div>
                     </div>
                   )}
@@ -354,7 +345,7 @@ export default function QRGenerator() {
                       className="flex-1 cursor-pointer bg-white hover:bg-zinc-100 text-zinc-900"
                     >
                       <Download className="w-4 h-4" />
-                      Tải xuống
+                      Download
                     </Button>
                     <Button
                       onClick={copyQR}
@@ -363,12 +354,12 @@ export default function QRGenerator() {
                       {copied ? (
                         <>
                           <Check className="w-4 h-4" />
-                          Đã sao chép
+                          Copied
                         </>
                       ) : (
                         <>
                           <Copy className="w-4 h-4" />
-                          Sao chép
+                          Copy
                         </>
                       )}
                     </Button>
@@ -379,10 +370,10 @@ export default function QRGenerator() {
               {/* Info */}
               <div className="text-xs text-zinc-400 space-y-1">
                 <p>
-                  • Mức độ sửa lỗi cao hơn = QR code lớn hơn nhưng bền vững hơn
+                  • Higher error correction = Larger QR code but more durable
                 </p>
-                <p>• Kích thước tối thiểu: 128px, tối đa: 512px</p>
-                <p>• Hỗ trợ: URL, text, email, số điện thoại, WiFi</p>
+                <p>• Minimum size: 128px, Maximum: 512px</p>
+                <p>• Supports: URL, text, email, phone number, WiFi</p>
               </div>
             </div>
           </div>
