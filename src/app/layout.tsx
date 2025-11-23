@@ -27,6 +27,28 @@ export const metadata: Metadata = {
       { url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
   },
+  openGraph: {
+    title: "Lê Huy Thái | lehuythai.com",
+    description: "Khám phá portfolio của Lê Huy Thái - Full-stack Developer",
+    url: "https://lehuythai.com",
+    siteName: "lehuythai.com",
+    images: [
+      {
+        url: "/icons/apple-touch-icon.png",
+        width: 180,
+        height: 180,
+        alt: "Lê Huy Thái",
+      },
+    ],
+    locale: "vi_VN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Lê Huy Thái | lehuythai.com",
+    description: "Khám phá portfolio của Lê Huy Thái - Full-stack Developer",
+    images: ["/icons/apple-touch-icon.png"],
+  },
 };
 
 export const viewport: Viewport = {
@@ -44,6 +66,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        {/* Explicit icon links for better share sheet support */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#18181b" />
+      </head>
       <body
         className={`${beVietnamPro.variable} antialiased bg-zinc-950 text-zinc-200 min-h-screen`}
       >

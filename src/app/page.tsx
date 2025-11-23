@@ -10,6 +10,7 @@ import Skills from "@/components/home/Skills";
 import Projects from "@/components/home/Projects";
 import Contact from "@/components/home/Contact";
 import Footer from "@/components/home/Footer";
+import ShareButton from "@/components/home/ShareButton";
 
 export default function Page() {
   return (
@@ -25,6 +26,7 @@ export default function Page() {
       <Contact />
       <Summary />
       <Footer />
+      <ShareButton />
     </main>
   );
 }
