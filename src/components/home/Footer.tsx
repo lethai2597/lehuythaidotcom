@@ -40,7 +40,7 @@ export default function Footer() {
             {/* Social Icons */}
             <div className="flex items-center gap-3 md:gap-4">
               <a
-                href="https://www.facebook.com/ko.ten.2571997/"
+                href="https://www.facebook.com/lehuythaidotcom.fb/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-zinc-400 hover:text-blue-400 transition-colors p-1"

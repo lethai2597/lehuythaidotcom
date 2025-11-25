@@ -67,7 +67,7 @@ export default function Home() {
         <div className="flex justify-center gap-4 items-center">
           <a
             className="inline-flex cursor-pointer items-center gap-2 px-4 py-2 bg-zinc-800 hover:bg-zinc-700 text-white rounded-full text-sm font-medium transition-colors duration-200 shadow-sm hover:shadow-md"
-            href="https://www.facebook.com/ko.ten.2571997/"
+            href="https://www.facebook.com/lehuythaidotcom.fb/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -111,7 +111,7 @@ export default function Home() {
         })}
 
         <a
-          href="https://www.facebook.com/ko.ten.2571997/"
+          href="https://www.facebook.com/lehuythaidotcom.fb/"
           className="bg-zinc-800 rounded-2xl p-6 flex items-center gap-4 hover:bg-zinc-700 transition-colors duration-200"
           target="_blank"
           rel="noopener noreferrer"

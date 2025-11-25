@@ -225,7 +225,7 @@ export default function Contact() {
               </h3>
               <div className="space-y-3 md:space-y-4">
                 <a
-                  href="https://www.facebook.com/ko.ten.2571997/"
+                  href="https://www.facebook.com/lehuythaidotcom.fb/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 md:gap-4 group"
@@ -238,7 +238,7 @@ export default function Contact() {
                       Facebook
                     </h4>
                     <p className="text-base md:text-lg font-semibold text-white group-hover:text-blue-400 transition-colors">
-                      @ko.ten.2571997
+                      @lehuythaidotcom.fb
                     </p>
                   </div>
                 </a>
